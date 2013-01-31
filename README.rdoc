@@ -1,8 +1,22 @@
-= memcached-manager
+== Memcached Manager
 
-Description goes here.
+A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app.
 
-== Contributing to memcached-manager
+== Installation
+
+1. Install the gem.
+
+    gem install memcached-manager
+    
+2. Run memcached-manager
+
+    memcached-manager
+
+== Plugging memcached manager to an existing Rails app.
+
+Todo.
+
+== Contributing to Memcached Manager
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
