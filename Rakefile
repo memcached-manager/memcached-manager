@@ -17,20 +17,13 @@ Jeweler::Tasks.new do |gem|
   gem.name = "memcached-manager"
   gem.homepage = "http://github.com/thiagofm/memcached-manager"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
+  gem.description = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
   gem.email = "thiagown@gmail.com"
   gem.authors = ["Thiago Fernandes Massa"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
-
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
 
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
