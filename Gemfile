@@ -5,11 +5,19 @@ source "http://rubygems.org"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
+
+gem "sinatra"
+gem "sinatra-contrib"
+
 group :development do
   gem "jeweler", "~> 1.8.4"
   gem "rdoc"
+end
+
+group :test do
   gem "simplecov"
   gem "rspec"
-  gem "cucumber"
   gem "mocha"
+  gem "cucumber"
+  gem "capybara"
 end
