@@ -16,8 +16,10 @@ end
 
 group :test do
   gem "simplecov"
+  gem "rack-test", :require => "rack/test"
   gem "rspec"
   gem "mocha"
   gem "cucumber"
-  gem "capybara"
+  gem "capybara", :require => false
+  gem "faraday"
 end
