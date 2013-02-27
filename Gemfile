@@ -8,6 +8,7 @@ source "http://rubygems.org"
 
 gem "sinatra"
 gem "sinatra-contrib"
+gem "dalli"
 
 group :development do
   gem "jeweler", "~> 1.8.4"
