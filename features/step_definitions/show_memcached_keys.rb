@@ -6,7 +6,6 @@ end
 When /^I visit "(.*?)"\.json$/ do |route|
   # Had to do it in order to BDD, may erase it l8r
   begin 
-    p route
     @response = JSON.parse(API.get("#{route}.json").body)
   rescue
   end
