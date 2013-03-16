@@ -29,11 +29,9 @@ module MemcachedManager
           matches = c.scan(/^ITEM (.+?) \[(\d+) b; (\d+) s\]$/).each do |key_data|
             (cache_key, bytes, expires_time) = key_data
             humanized_expires_time = Time.at(expires_time.to_i).to_s     
-            expired = "On"
-            if Time.at(expires_time.to_i) < Time.now
-              expired = "Expired"
-            end
-            @keys << { key: cache_key, bytes: bytes, expires_at: expires_time, status: humanized_expires_time }
+            expired = false
+            expired = true if Time.at(expires_time.to_i) < Time.now
+            @keys << { key: cache_key, bytes: bytes, expires_at: humanized_expires_time, expired: expired }
           end
         end  
       end
