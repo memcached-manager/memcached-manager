@@ -8,7 +8,7 @@ module MemcachedManager
   class App < Sinatra::Base
     enable :inline_templates
 
-    get '/list_keys.json' do
+    get '/api/keys.json' do
       content_type :json
 
       # should extract this somewhere... lol. Got it from a gist
@@ -38,8 +38,21 @@ module MemcachedManager
 
       @keys.to_json
     end
+
+    get '/api/keys/:key.json' do
+      content_type :json
+      response = Memcached.get(params[:key])
+
+      if response == 'null'
+        ''
+      else
+        {
+          key: params[:key],
+          value: Memcached.get(params[:key])
+        }.to_json
+      end
+    end
   end
 end
-
 Memcached = Dalli::Client.new('localhost:11211')
 MemcachedManager::App.run! if __FILE__ == $0
