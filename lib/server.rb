@@ -41,18 +41,19 @@ module MemcachedManager
 
     get '/api/keys/:key.json' do
       content_type :json
-      response = Memcached.get(params[:key])
+      value = Memcached.get(params[:key])
 
-      if response == 'null'
+      if value == 'null'
         ''
       else
         {
           key: params[:key],
-          value: Memcached.get(params[:key])
+          value: value
         }.to_json
       end
     end
   end
 end
+
 Memcached = Dalli::Client.new('localhost:11211')
 MemcachedManager::App.run! if __FILE__ == $0
