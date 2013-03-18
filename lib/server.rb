@@ -52,6 +52,9 @@ module MemcachedManager
         }.to_json
       end
     end
+
+    post '/api/keys' do
+    end
   end
 end
 
