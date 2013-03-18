@@ -8,6 +8,12 @@ module MemcachedManager
   class App < Sinatra::Base
     enable :inline_templates
 
+    post '/api/keys.json' do
+      content_type :json
+
+      { saved: Memcached.set(params[:key], params[:value]) }.to_json
+    end
+
     get '/api/keys.json' do
       content_type :json
 
@@ -46,14 +52,8 @@ module MemcachedManager
       if value == 'null'
         ''
       else
-        {
-          key: params[:key],
-          value: value
-        }.to_json
+        { key: params[:key], value: value }.to_json
       end
-    end
-
-    post '/api/keys' do
     end
   end
 end
