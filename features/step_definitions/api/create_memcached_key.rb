@@ -1,7 +1,7 @@
 When /^I post some data to "(.*?)" in the API$/ do |route|
   @data = { key: 'all.i.want.to.do', value: 'is.bang.bang.bang' }
   @response = API.post do |req|
-    req.url "api/#{route}.json"
+    req.url "api/#{route}"
     req.params = @data
   end
 end
