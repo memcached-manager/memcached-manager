@@ -1,4 +1,4 @@
-=== IN DEVELOPMENT
+= IN DEVELOPMENT, DON'T USE YET
 
 == Memcached Manager
 
