@@ -55,6 +55,12 @@ module MemcachedManager
         { key: params[:key], value: value }.to_json
       end
     end
+
+    delete '/api/keys/:key.json' do
+      content_type :json
+
+      { deleted: Memcached.delete(params[:key]) }.to_json
+    end
   end
 end
 
