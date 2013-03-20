@@ -1,3 +1,4 @@
+@api
 Feature: Show memcached keys
   Scenario: Success
     Given there's the "username" memcached key avaiable

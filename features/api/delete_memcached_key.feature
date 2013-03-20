@@ -1,3 +1,4 @@
+@api
 Feature: Delete memcached key
   Scenario: Success
     Given there's the "username" memcached key avaiable
