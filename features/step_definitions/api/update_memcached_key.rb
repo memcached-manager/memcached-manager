@@ -1,5 +1,5 @@
 When /^I put some data to "(.*?)" in the API$/ do |route|
-  @data = { key: 'username', value: 'horofox' }
+  @data = { key: 'username', value: 'thiagofm' }
   @response = API.put do |req|
     req.url "api/#{route}"
     req.params = @data
@@ -11,12 +11,9 @@ Then /^I should receive a json response that it was edited successfully$/ do
   response_json = JSON.parse(@response.body)
   response_json.class.should eql Hash
   response_json.keys.should include 'updated'
-  p response_json
-  p response_json
-  p response_json
   response_json['updated'].should == true
 end
 
 Then /^it should be updated in memcached$/ do
-  Memcached.get(@key).should eql 'horofox'
+  Memcached.get(@key).should eql 'thiagofm'
 end

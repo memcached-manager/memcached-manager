@@ -1,5 +1,5 @@
 @api
-Feature: Edit memcached pair
+Feature: Update memcached pair
   Scenario: Success
     Given there's the "username" memcached key avaiable
     When I put some data to "/keys.json" in the API
