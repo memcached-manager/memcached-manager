@@ -1,4 +1,5 @@
 require 'sinatra/base'
+
 require 'sinatra/contrib'
 require 'json'
 require 'dalli'
@@ -12,6 +13,12 @@ module MemcachedManager
       content_type :json
 
       { saved: Memcached.set(params[:key], params[:value]) }.to_json
+    end
+
+    put '/api/keys.json' do
+      content_type :json
+
+      { updated: Memcached.replace(params[:key], params[:value]) }.to_json
     end
 
     get '/api/keys.json' do
