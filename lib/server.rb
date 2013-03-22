@@ -9,6 +9,8 @@ module MemcachedManager
   class App < Sinatra::Base
     enable :inline_templates
 
+    set :foo, 'bar'
+
     post '/api/keys.json' do
       content_type :json
 
@@ -41,7 +43,7 @@ module MemcachedManager
         localhost.cmd("String" => "stats cachedump #{slab_id} #{@cache_dump_limit}", "Match" => /^END/) do |c|
           matches = c.scan(/^ITEM (.+?) \[(\d+) b; (\d+) s\]$/).each do |key_data|
             (cache_key, bytes, expires_time) = key_data
-            humanized_expires_time = Time.at(expires_time.to_i).to_s     
+            humanized_expires_time = Time.at(expires_time.to_i).to_s
             expired = false
             expired = true if Time.at(expires_time.to_i) < Time.now
             @keys << { key: cache_key, bytes: bytes, expires_at: humanized_expires_time, expired: expired }
@@ -57,7 +59,7 @@ module MemcachedManager
       value = Memcached.get(params[:key])
 
       if value == 'null'
-        ''
+        { error: 'key not found'}.to_json
       else
         { key: params[:key], value: value }.to_json
       end
