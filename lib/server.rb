@@ -8,8 +8,21 @@ require 'net/telnet'
 module MemcachedManager
   class App < Sinatra::Base
     enable :inline_templates
+    enable :sessions
 
-    set :foo, 'bar'
+    get '/api/config.json' do
+      if session.key?('host') && session.key?('port')
+        { host: session['host'], port: session['port'] }.to_json
+      else
+        { host: 'localhost', port: '11211' }.to_json
+      end
+    end
+
+    post '/api/config.json' do
+      session['host'] = params['host']
+      session['port'] = params['port']
+      { success: true }.to_json
+    end
 
     post '/api/keys.json' do
       content_type :json
