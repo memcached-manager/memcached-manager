@@ -1,21 +1,32 @@
+# Sinatra
 require 'sinatra/base'
-
 require 'sinatra/contrib'
 require 'json'
+
+# Libs
 require 'dalli'
 require 'net/telnet'
+
+# Project files
+require_relative './extensions'
 
 module MemcachedManager
   class App < Sinatra::Base
     enable :inline_templates
     enable :sessions
 
+    helpers Sinatra::MemcachedSettings
+
+    before do
+      @memcached = Dalli::Client.new("#{memcached_host(session)}:#{memcached_port(session)}")
+    end
+
+    after do
+      @memcached.close
+    end
+
     get '/api/config.json' do
-      if session.key?('host') && session.key?('port')
-        { host: session['host'], port: session['port'] }.to_json
-      else
-        { host: 'localhost', port: '11211' }.to_json
-      end
+      { host: memcached_host(session), port: memcached_port(session) }.to_json
     end
 
     post '/api/config.json' do
@@ -27,13 +38,13 @@ module MemcachedManager
     post '/api/keys.json' do
       content_type :json
 
-      { saved: Memcached.set(params[:key], params[:value]) }.to_json
+      { saved: @memcached.set(params[:key], params[:value]) }.to_json
     end
 
     put '/api/keys.json' do
       content_type :json
 
-      { updated: Memcached.replace(params[:key], params[:value]) }.to_json
+      { updated: @memcached.replace(params[:key], params[:value]) }.to_json
     end
 
     get '/api/keys.json' do
@@ -41,7 +52,7 @@ module MemcachedManager
 
       # should extract this somewhere... lol. Got it from a gist
       @keys = []
-      @memcached_data = { :host => "localhost", :port => 11211, :timeout => 3 }
+      @memcached_data = { :host => memcached_host(session), :port => memcached_port(session), :timeout => 3 }
       @cache_dump_limit = 100
       @data = []
 
@@ -69,7 +80,7 @@ module MemcachedManager
 
     get '/api/keys/:key.json' do
       content_type :json
-      value = Memcached.get(params[:key])
+      value = @memcached.get(params[:key])
 
       if value == 'null'
         { error: 'key not found'}.to_json
@@ -81,10 +92,9 @@ module MemcachedManager
     delete '/api/keys/:key.json' do
       content_type :json
 
-      { deleted: Memcached.delete(params[:key]) }.to_json
+      { deleted: @memcached.delete(params[:key]) }.to_json
     end
   end
 end
 
-Memcached = Dalli::Client.new('localhost:11211')
 MemcachedManager::App.run! if __FILE__ == $0
