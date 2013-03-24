@@ -21,6 +21,10 @@ module MemcachedManager
       @memcached = Dalli::Client.new("#{memcached_host(session)}:#{memcached_port(session)}")
     end
 
+    after do
+      @memcached.close
+    end
+
     get '/api/config.json' do
       { host: memcached_host(session), port: memcached_port(session) }.to_json
     end
