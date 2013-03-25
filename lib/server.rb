@@ -14,6 +14,8 @@ module MemcachedManager
   class App < Sinatra::Base
     enable :inline_templates
     enable :sessions
+    
+    set :public_folder, 'public'
 
     helpers Sinatra::MemcachedSettings
 
