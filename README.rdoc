@@ -4,7 +4,7 @@
 
 A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app.
 
-{<img src="https://travis-ci.org/thiagofm/memcached-manager.png" />}[https://travis-ci.org/thiagofm/memcached-manager] {<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/thiagofm/memcached-manager]
+{<img src="https://travis-ci.org/thiagofm/memcached-manager.png" />}[https://travis-ci.org/thiagofm/memcached-manager] {<img src="https://codeclimate.com/github/thiagofm/memcached-manager.png" />}[https://codeclimate.com/github/thiagofm/memcached-manager]
 
 == Installation
 
