@@ -11,7 +11,7 @@ require 'net/telnet'
 require_relative './extensions'
 
 module MemcachedManager
-  class App < Sinatra::Base
+  class API < Sinatra::Base
     enable :inline_templates
     enable :sessions
     
@@ -27,29 +27,29 @@ module MemcachedManager
       @memcached.close
     end
 
-    get '/api/config.json' do
+    get '/config.json' do
       { host: memcached_host(session), port: memcached_port(session) }.to_json
     end
 
-    post '/api/config.json' do
+    post '/config.json' do
       session['host'] = params['host']
       session['port'] = params['port']
       { success: true }.to_json
     end
 
-    post '/api/keys.json' do
+    post '/keys.json' do
       content_type :json
 
       { saved: @memcached.set(params[:key], params[:value]) }.to_json
     end
 
-    put '/api/keys.json' do
+    put '/keys.json' do
       content_type :json
 
       { updated: @memcached.replace(params[:key], params[:value]) }.to_json
     end
 
-    get '/api/keys.json' do
+    get '/keys.json' do
       content_type :json
 
       # should extract this somewhere... lol. Got it from a gist
@@ -80,7 +80,7 @@ module MemcachedManager
       @keys.to_json
     end
 
-    get '/api/keys/:key.json' do
+    get '/keys/:key.json' do
       content_type :json
       value = @memcached.get(params[:key])
 
@@ -91,12 +91,16 @@ module MemcachedManager
       end
     end
 
-    delete '/api/keys/:key.json' do
+    delete '/keys/:key.json' do
       content_type :json
 
       { deleted: @memcached.delete(params[:key]) }.to_json
     end
   end
+
+
+  class Webapp < Sinatra::Base
+  end
 end
 
-MemcachedManager::App.run! if __FILE__ == $0
+#MemcachedManager::App.run! if __FILE__ == $0
