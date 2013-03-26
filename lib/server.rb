@@ -102,5 +102,3 @@ module MemcachedManager
   class Webapp < Sinatra::Base
   end
 end
-
-#MemcachedManager::App.run! if __FILE__ == $0
