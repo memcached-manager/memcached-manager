@@ -1,0 +1,10 @@
+<section ng-controller='keysController'>
+  <section>
+    <h2>Keys</h2>
+    <ul>
+      <li ng-repeat='key in keys'>
+        {{key.key}} {{key.bytes}} {{key.expires_at}}
+      </li>
+    </ul>
+  </section>
+</section>
