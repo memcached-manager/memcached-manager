@@ -40,6 +40,8 @@ module MemcachedManager
     post '/keys.json' do
       content_type :json
 
+      p params
+
       { saved: @memcached.set(params[:key], params[:value]) }.to_json
     end
 
