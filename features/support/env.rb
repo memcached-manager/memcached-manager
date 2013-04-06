@@ -3,9 +3,10 @@ require 'capybara/cucumber'
 require 'faraday'
 require 'dalli'
 
-# Sinatra modules
-require_relative '../../lib/api'
-require_relative '../../lib/webapp'
+# Files
+Dir.glob("lib/**/*.rb").each do |file|
+  require_relative "../../#{file}"
+end
 
 Capybara.app = Rack::Builder.parse_file(File.expand_path('../../../config.ru', __FILE__)).first
 
