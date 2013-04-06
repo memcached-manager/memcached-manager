@@ -10,6 +10,14 @@ require 'net/telnet'
 # Project files
 require_relative './extensions'
 
+def try(&block)
+  begin
+    yield
+  rescue Exception => e
+    @errors << e.message
+  end
+end
+
 module MemcachedManager
   class API < Sinatra::Base
     enable :inline_templates
@@ -18,14 +26,13 @@ module MemcachedManager
     set :public_folder, 'public'
 
     helpers Sinatra::MemcachedSettings
+    helpers Sinatra::Errors
 
     before do
-      @errors = []
+      setup_errors
 
-      begin
+      try do
         @memcached = Dalli::Client.new("#{memcached_host(session)}:#{memcached_port(session)}")
-      rescue Exception => e
-        @errors << e.message
       end
     end
 
@@ -46,13 +53,9 @@ module MemcachedManager
     post '/keys.json' do
       content_type :json
 
-      begin
-        @memcached.set(params[:key], params[:value])
-      rescue Exception => e
-        @errors << e.message
-      end
+      try { @memcached.set(params[:key], params[:value]) }
 
-      { errors: @errors }.to_json
+      { errors: errors }.to_json
     end
 
     put '/keys.json' do
