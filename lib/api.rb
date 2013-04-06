@@ -54,7 +54,7 @@ module MemcachedManager
     post '/keys.json' do
       content_type :json
 
-      try { @memcached.set(params[:key], params[:value]) }
+      try { memcached_connection.set(params[:key], params[:value]) }
 
       { errors: errors }.to_json
     end
@@ -62,7 +62,7 @@ module MemcachedManager
     put '/keys.json' do
       content_type :json
 
-      { updated: @memcached.replace(params[:key], params[:value]) }.to_json
+      { updated: memcached_connection.replace(params[:key], params[:value]) }.to_json
     end
 
     get '/keys.json' do
@@ -98,7 +98,7 @@ module MemcachedManager
 
     get '/keys/:key.json' do
       content_type :json
-      value = @memcached.get(params[:key])
+      value = memcached_connection.get(params[:key])
 
       if value.nil?
         { error: 'key not found'}.to_json
@@ -110,7 +110,7 @@ module MemcachedManager
     delete '/keys/:key.json' do
       content_type :json
 
-      { deleted: @memcached.delete(params[:key]) }.to_json
+      { deleted: memcached_connection.delete(params[:key]) }.to_json
     end
   end
 
