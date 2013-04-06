@@ -1,7 +1,35 @@
 require 'spec_helper'
 
 describe Sinatra::Errors do
-  it "1 = 1" do
-    1.should be 1
+  before(:each) do
+    @klass = Class.new.extend(Sinatra::Errors)
+  end
+
+  context "#setup_errors" do
+    it do
+      @klass.setup_errors
+      @klass.instance_variable_get(:"@errors").should eql []
+    end
+  end
+
+  context "#try" do
+    before(:each) do
+      @klass.setup_errors
+    end
+
+    it "should execute a block and add to errors if an exception is raised" do
+      @klass.try { raise 'your hands' }
+      @klass.errors.should include 'your hands'
+    end
+  end
+
+  context "#errors" do
+    before(:each) do
+      @klass.setup_errors
+    end
+
+    it "should be the instance variable of errors" do
+      @klass.instance_variable_get(:"@errors").should be @klass.errors 
+    end
   end
 end
