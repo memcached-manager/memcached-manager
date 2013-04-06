@@ -20,7 +20,13 @@ module MemcachedManager
     helpers Sinatra::MemcachedSettings
 
     before do
-      @memcached = Dalli::Client.new("#{memcached_host(session)}:#{memcached_port(session)}")
+      @errors = []
+
+      begin
+        @memcached = Dalli::Client.new("#{memcached_host(session)}:#{memcached_port(session)}")
+      rescue Exception => e
+        @errors << e.message
+      end
     end
 
     after do
@@ -40,9 +46,13 @@ module MemcachedManager
     post '/keys.json' do
       content_type :json
 
-      p params
+      begin
+        @memcached.set(params[:key], params[:value])
+      rescue Exception => e
+        @errors << e.message
+      end
 
-      { saved: @memcached.set(params[:key], params[:value]) }.to_json
+      { errors: @errors }.to_json
     end
 
     put '/keys.json' do
