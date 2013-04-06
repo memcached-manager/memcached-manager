@@ -28,6 +28,10 @@ describe Sinatra::Errors do
       @klass.setup_errors
     end
 
+    it "should exist" do
+      @klass.respond_to?(:errors).should be true
+    end
+
     it "should be the instance variable of errors" do
       @klass.instance_variable_get(:"@errors").should be @klass.errors 
     end
