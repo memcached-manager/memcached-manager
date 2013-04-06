@@ -26,18 +26,19 @@ module MemcachedManager
     set :public_folder, 'public'
 
     helpers Sinatra::MemcachedSettings
+    helpers Sinatra::MemcachedConnection
     helpers Sinatra::Errors
 
     before do
       setup_errors
 
       try do
-        @memcached = Dalli::Client.new("#{memcached_host(session)}:#{memcached_port(session)}")
+        setup_memcached(memcached_host(session), memcached_port(session))
       end
     end
 
     after do
-      @memcached.close
+      close_memcached
     end
 
     get '/config.json' do
