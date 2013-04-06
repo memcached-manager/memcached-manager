@@ -10,14 +10,6 @@ require 'net/telnet'
 # Project files
 require_relative './extensions'
 
-def try(&block)
-  begin
-    yield
-  rescue Exception => e
-    @errors << e.message
-  end
-end
-
 module MemcachedManager
   class API < Sinatra::Base
     enable :inline_templates
