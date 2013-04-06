@@ -105,8 +105,4 @@ module MemcachedManager
       { deleted: memcached_connection.delete(params[:key]) }.to_json
     end
   end
-
-
-  class Webapp < Sinatra::Base
-  end
 end
