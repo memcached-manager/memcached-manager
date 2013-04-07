@@ -22,4 +22,3 @@ end
 
 MemcachedConfigs = { host: 'localhost', port: '11211' }
 Memcached        = Dalli::Client.new("#{MemcachedConfigs[:host]}:#{MemcachedConfigs[:port]}")
-
