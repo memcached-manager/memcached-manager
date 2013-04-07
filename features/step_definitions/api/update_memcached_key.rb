@@ -10,8 +10,8 @@ Then /^I should receive a json response that it was edited successfully$/ do
   @response.status.should be 200
   response_json = JSON.parse(@response.body)
   response_json.class.should eql Hash
-  response_json.keys.should include 'updated'
-  response_json['updated'].should == true
+  response_json.keys.should include 'errors'
+  response_json['errors'].size.should be 0
 end
 
 Then /^it should be updated in memcached$/ do

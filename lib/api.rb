@@ -24,9 +24,7 @@ module MemcachedManager
     before do
       setup_errors
 
-      try do
-        setup_memcached(memcached_host(session), memcached_port(session))
-      end
+      try { setup_memcached(memcached_host(session), memcached_port(session)) }
     end
 
     after do
@@ -54,7 +52,9 @@ module MemcachedManager
     put '/keys.json' do
       content_type :json
 
-      { updated: memcached_connection.replace(params[:key], params[:value]) }.to_json
+      try { memcached_connection.replace(params[:key], params[:value]) }
+
+      { errors: errors }.to_json
     end
 
     get '/keys.json' do
