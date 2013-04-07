@@ -2,6 +2,10 @@ require 'cucumber'
 require 'capybara/cucumber'
 require 'faraday'
 require 'dalli'
+require 'rspec'
+require 'rspec/expectations'
+
+World(RSpec::Matchers)
 
 # Files
 Dir.glob("lib/**/*.rb").each do |file|
