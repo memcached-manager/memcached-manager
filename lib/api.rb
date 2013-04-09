@@ -90,10 +90,13 @@ module MemcachedManager
 
     get '/keys/:key.json' do
       content_type :json
+
       value = memcached_connection.get(params[:key])
 
-      if value.nil?
-        { error: 'key not found'}.to_json
+      try { raise 'Key not found.' if value.nil? }
+
+      if errors.any?
+        { errors: errors}.to_json
       else
         { key: params[:key], value: value }.to_json
       end
@@ -102,7 +105,9 @@ module MemcachedManager
     delete '/keys/:key.json' do
       content_type :json
 
-      { deleted: memcached_connection.delete(params[:key]) }.to_json
+      try { memcached_connection.delete(params[:key]) }
+
+      { errors: errors }.to_json
     end
   end
 end
