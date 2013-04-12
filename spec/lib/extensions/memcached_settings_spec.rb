@@ -32,4 +32,30 @@ describe Sinatra::MemcachedSettings do
       @klass.memcached_port(empty_session).should eql '11211'
     end
   end
+
+  context '-#configured?' do
+    context 'host is filled' do
+      let(:configured_host) { {'host' => 'i.am'} }
+
+      it "should be configured" do
+        @klass.send(:configured?, configured_host, 'host').should be true
+      end
+
+      it "should not be configured" do
+        @klass.send(:configured?, configured_host, 'port').should be false
+      end
+    end
+
+    context 'port is filled' do
+      let(:configured_port) { {'port' => '1337'} }
+
+      it "should be configured" do
+        @klass.send(:configured?, configured_port, 'port').should be true
+      end
+
+      it "should not be configured" do
+        @klass.send(:configured?, configured_port, 'host').should be false
+      end
+    end
+  end
 end
