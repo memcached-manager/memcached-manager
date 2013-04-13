@@ -38,7 +38,8 @@ module MemcachedManager
     post '/config.json' do
       session['host'] = params['host']
       session['port'] = params['port']
-      { success: true }.to_json
+
+      { errors: errors }.to_json
     end
 
     post '/keys.json' do
