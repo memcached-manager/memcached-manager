@@ -92,7 +92,6 @@ DEPENDENCIES
   jeweler (~> 1.8.4)
   mocha
   rack-test
-  rdoc
   rspec
   simplecov
   sinatra

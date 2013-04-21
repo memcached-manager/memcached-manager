@@ -6,7 +6,6 @@ gem "dalli"
 
 group :development do
   gem "jeweler", "~> 1.8.4"
-  gem "rdoc"
 end
 
 group :test do
