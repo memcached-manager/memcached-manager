@@ -20,6 +20,12 @@ A sinatra memcached-manager that allows you to view status, flush/view keys and 
 
 Todo.
 
+== Roadmap
+
+* Finish angular.js actions
+* Develop frontend & artwork
+* Generate GEM
+
 == Contributing to Memcached Manager
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
