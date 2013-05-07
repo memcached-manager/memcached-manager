@@ -38,8 +38,8 @@ Todo.
 
 == Maintainers
 
-* [thiagofm](http://github.com/thiagofm)
-* [pnicholas](http://github.com/pnicholas)
+* thiagofm[http://github.com/thiagofm]
+* pnicholas[http://github.com/pnicholas]
 
 
 == Copyright
