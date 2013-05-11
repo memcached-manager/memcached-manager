@@ -26,6 +26,12 @@ Todo.
 * Develop frontend & artwork
 * Generate GEM
 
+== Running(for now...)
+
+Just run:
+
+    rackup
+
 == Contributing to Memcached Manager
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
