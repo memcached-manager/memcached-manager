@@ -8,7 +8,7 @@ rdoc
 # yard generated
 doc
 .yardoc
-
+.rvmrc
 # bundler
 .bundle
 
