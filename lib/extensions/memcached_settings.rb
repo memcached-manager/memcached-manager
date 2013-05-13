@@ -1,19 +1,13 @@
 module Sinatra
   module MemcachedSettings
     def memcached_host session
-      if configured? session, 'host'
-        session['host']
-      else
-        'localhost'
-      end
+      return session['host'] if configured? session, 'host'
+      'localhost'
     end
 
     def memcached_port session
-      if configured? session, 'port'
-        session['port']
-      else
-        '11211'
-      end
+      return session['port'] if configured? session, 'port'
+      '11211'
     end
 
     private
