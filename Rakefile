@@ -20,7 +20,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
   gem.description = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
   gem.email = "thiagown@gmail.com"
-  gem.authors = ["Thiago Fernandes Massa"]
+  gem.authors = ["Thiago Fernandes Massa", "Pedro Nicholas Souza"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
