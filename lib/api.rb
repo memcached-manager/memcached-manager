@@ -22,6 +22,8 @@ module MemcachedManager
     helpers Sinatra::Errors
 
     before do
+      content_type :json
+
       setup_errors
 
       try { setup_memcached(memcached_host(session), memcached_port(session)) }
@@ -43,24 +45,18 @@ module MemcachedManager
     end
 
     post '/keys.json' do
-      content_type :json
-
       try { memcached_connection.set(params[:key], params[:value]) }
 
       { errors: errors }.to_json
     end
 
     put '/keys.json' do
-      content_type :json
-
       try { memcached_connection.replace(params[:key], params[:value]) }
 
       { errors: errors }.to_json
     end
 
     get '/keys.json' do
-      content_type :json
-
       # should extract this somewhere... lol. Got it from a gist
       @keys = []
       @memcached_data = { :host => memcached_host(session), :port => memcached_port(session), :timeout => 3 }
@@ -90,8 +86,6 @@ module MemcachedManager
     end
 
     get '/keys/:key.json' do
-      content_type :json
-
       value = memcached_connection.get(params[:key])
 
       try { raise 'Key not found.' if value.nil? }
@@ -104,8 +98,6 @@ module MemcachedManager
     end
 
     delete '/keys/:key.json' do
-      content_type :json
-
       try { memcached_connection.delete(params[:key]) }
 
       { errors: errors }.to_json
