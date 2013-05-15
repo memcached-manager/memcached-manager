@@ -10,8 +10,8 @@ Then /^I should receive a json response that it was saved successfully$/ do
   @response.status.should be 200
   response_json = JSON.parse(@response.body)
   response_json.class.should eql Hash
-  response_json.keys.should include 'errors'
-  response_json['errors'].should == []
+  response_json.keys.should_not include 'errors'
+  response_json.values.should include 'all.i.want.to.do'
 end
 
 Then /^it should be saved in memcached$/ do

@@ -47,7 +47,11 @@ module MemcachedManager
     post '/keys.json' do
       try { memcached_connection.set(params[:key], params[:value]) }
 
-      { errors: errors }.to_json
+      if errors.any?
+        { errors: errors }.to_json
+      else
+        { key: params[:key] }.to_json
+      end
     end
 
     put '/keys.json' do
