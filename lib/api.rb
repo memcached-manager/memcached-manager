@@ -19,6 +19,7 @@ module MemcachedManager
 
     helpers Sinatra::MemcachedSettings
     helpers Sinatra::MemcachedConnection
+    helpers Sinatra::MemcachedInspector
     helpers Sinatra::Errors
 
     before do
@@ -61,32 +62,7 @@ module MemcachedManager
     end
 
     get '/keys.json' do
-      # should extract this somewhere... lol. Got it from a gist
-      @keys = []
-      @memcached_data = { :host => memcached_host(session), :port => memcached_port(session), :timeout => 3 }
-      @cache_dump_limit = 100
-      @data = []
-
-      localhost = Net::Telnet::new("Host" => @memcached_data[:host], "Port" => @memcached_data[:port], "Timeout" => @memcached_data[:timeout])
-      slab_ids = []
-      localhost.cmd("String" => "stats items", "Match" => /^END/) do |c|
-        matches = c.scan(/STAT items:(\d+):/)
-        slab_ids = matches.flatten.uniq
-      end
-
-      slab_ids.each do |slab_id|
-        localhost.cmd("String" => "stats cachedump #{slab_id} #{@cache_dump_limit}", "Match" => /^END/) do |c|
-          matches = c.scan(/^ITEM (.+?) \[(\d+) b; (\d+) s\]$/).each do |key_data|
-            (cache_key, bytes, expires_time) = key_data
-            humanized_expires_time = Time.at(expires_time.to_i).to_s
-            expired = false
-            expired = true if Time.at(expires_time.to_i) < Time.now
-            @keys << { key: cache_key, bytes: bytes, expires_at: humanized_expires_time, expired: expired }
-          end
-        end  
-      end
-
-      @keys.to_json
+      memcached_inspect(memcached_host(session), memcached_port(session)).to_json
     end
 
     get '/keys/:key.json' do
