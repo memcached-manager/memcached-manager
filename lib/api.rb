@@ -51,7 +51,10 @@ module MemcachedManager
       if errors.any?
         { errors: errors }.to_json
       else
-        { key: params[:key] }.to_json
+        memcached_inspect(memcached_host(session), memcached_port(session))
+          .select{|pair| pair[:key] == params[:key] }
+          .first
+          .to_json
       end
     end
 
