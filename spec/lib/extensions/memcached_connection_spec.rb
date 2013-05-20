@@ -11,9 +11,7 @@ describe Sinatra::MemcachedConnection do
   end
 
   context "#close_memcached" do
-    before(:each) do
-      klass.setup_memcached 'localhost', '1337'
-    end
+    before(:each) { klass.setup_memcached 'localhost', '1337' }
 
     it do
       # There isn't an Dalli api that tells if the connection is closed
@@ -22,13 +20,10 @@ describe Sinatra::MemcachedConnection do
   end
 
   context "#memcached_connection" do
-    before(:each) do
-      klass.setup_memcached 'localhost', '1337'
-    end
+    before(:each) { klass.setup_memcached 'localhost', '1337' }
 
     it "should be the instance variable of memcached" do
       klass.instance_variable_get(:"@memcached").should be klass.memcached_connection
     end
-  
   end
 end

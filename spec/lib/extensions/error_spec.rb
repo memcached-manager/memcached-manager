@@ -11,9 +11,7 @@ describe Sinatra::Errors do
   end
 
   context "#try" do
-    before(:each) do
-      klass.setup_errors
-    end
+    before(:each) { klass.setup_errors }
 
     it "should execute a block and add to errors if an exception is raised" do
       klass.try { raise 'your hands' }
@@ -22,9 +20,7 @@ describe Sinatra::Errors do
   end
 
   context "#errors" do
-    before(:each) do
-      klass.setup_errors
-    end
+    before(:each) { klass.setup_errors }
 
     it "should exist" do
       klass.respond_to?(:errors).should be true
