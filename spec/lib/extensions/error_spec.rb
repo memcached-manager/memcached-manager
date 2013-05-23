@@ -1,33 +1,23 @@
 require 'spec_helper'
 
 describe Sinatra::Errors do
-  let(:klass) { Class.new.extend(Sinatra::Errors) }
+  subject(:klass) { Class.new.extend(Sinatra::Errors) }
+  before(:each) { subject.setup_errors }
 
   context "#setup_errors" do
-    it do
-      klass.setup_errors
-      klass.instance_variable_get(:"@errors").should eql []
-    end
+    it { should have_instance_variable(:errors).with([]) }
   end
 
   context "#try" do
-    before(:each) { klass.setup_errors }
-
-    it "should execute a block and add to errors if an exception is raised" do
-      klass.try { raise 'your hands' }
-      klass.errors.should include 'your hands'
+    before(:each) do
+      subject.try { raise 'your hands' }
     end
+
+    it { should have_instance_variable(:errors).with(['your hands']) }
   end
 
   context "#errors" do
-    before(:each) { klass.setup_errors }
-
-    it "should exist" do
-      klass.respond_to?(:errors).should be true
-    end
-
-    it "should be the instance variable of errors" do
-      klass.instance_variable_get(:"@errors").should be klass.errors 
-    end
+    it { should respond_to(:errors) }
+    it { should have_instance_variable(:errors) }
   end
 end
