@@ -61,7 +61,14 @@ module MemcachedManager
     put '/keys.json' do
       try { memcached_connection.replace(params[:key], params[:value]) }
 
-      { errors: errors }.to_json
+      if errors.any?
+        { errors: errors }.to_json
+      else
+        memcached_inspect(memcached_host(session), memcached_port(session))
+                  .select{|pair| pair[:key] == params[:key] }
+                  .first
+                  .to_json
+      end
     end
 
     get '/keys.json' do
