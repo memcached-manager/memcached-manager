@@ -1,4 +1,4 @@
-<form ng-submit='createKey()'>
+<form ng-controller='CreateKeyController' ng-submit='createKey()'>
   <input ng-model='key.key' placeholder='Key' type='text'>
   <input ng-model='key.value' placeholder='Value' type='text'>
   <button>Create</button>
