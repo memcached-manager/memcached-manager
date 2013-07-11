@@ -2,14 +2,14 @@
   <h2>Keys</h2>
   <ul>
     <li ng-repeat='key in keys'>
-      {{key.key}}
-      {{key.bytes}}
-      {{key.expires_at}}
-      {{key.expired}}
+      {{ key.key }}
+      {{ key.bytes }}
+      {{ key.expires_at }}
+      {{ key.expired }}
       <span ng-controller="DeleteKeyController">
         <a ng-click="removeKey(key)">X</a>
       </span>
-      <a ng-click="editKey(key)">edit</a>
+      <a href="#/edit/{{ key.key }}">edit</a>
     </li>
   </ul>
 </section>
