@@ -1,0 +1,54 @@
+/* 
+ * Ui-view: keys
+ * */
+
+.key {
+  padding: 10px;
+  margin: 0px;
+  height: 40px;
+  border-top: 1px solid #eee;
+  display: block;
+  background-color: #f5f5f5;
+}
+
+.key:hover {
+  background-color: #eee;
+}
+
+#key-text {
+  float: left;
+  width: 60%;
+  margin-left: 10px;
+}
+
+#key-new {
+  float: right;
+  width: 30%;
+}
+
+.key-info {
+  float: left;
+  width: 85%;
+}
+
+.key-actions {
+  float: right;
+  padding-top: 10px;
+  width: 15%;
+}
+
+.clear {
+  clear: both;
+}
+
+.key-title {
+  font-weight: 800;
+}
+
+.expired {
+  background-color: #B5463F;
+}
+
+.not-expired {
+  background-color: #298D84;
+}

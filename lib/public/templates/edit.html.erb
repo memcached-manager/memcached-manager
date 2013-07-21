@@ -1,5 +1,6 @@
+<h2>Edit key</h2>
 <form ng-controller='UpdateKeyController' ng-submit='updateKey()'>
-  {{pair.key}}
+  <p>Key: {{pair.key}}</p>
   <input ng-model='pair.value' placeholder='Value' type='text'>
   <button>Edit</button>
 </form>

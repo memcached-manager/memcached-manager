@@ -1,15 +1,36 @@
 <section>
-  <h2>Keys</h2>
-  <ul>
-    <li ng-repeat='key in keys'>
-      {{ key.key }}
-      {{ key.bytes }}
-      {{ key.expires_at }}
-      {{ key.expired }}
-      <span ng-controller="DeleteKeyController">
-        <a ng-click="removeKey(key)">X</a>
-      </span>
-      <a href="#/edit/{{ key.key }}">edit</a>
-    </li>
-  </ul>
+  <h3>memcached manager</h3>
+  <hr>
+  <section id="key-menu">
+    <div id="key-text">
+      <h3>keys</h3>
+    </div>
+
+    <div id="key-new">
+      <a href="#/new" class="button">New key</a>
+    </div>
+  </section>
+
+  <div class="clear"></div>
+
+  <section id="key-keys">
+    <ul>
+      <li ng-repeat='key in keys' class="key">
+        <div class="key-info">
+          <div class="key-header">
+            <span class="key-title">{{ key.key }}</span>
+          </div>
+          <div id="key-data">
+            Size: {{ key.bytes }}B
+          </div>
+        </div>
+
+        <div class="key-actions">
+          <a ng-click="removeKey(key)" class="icon-remove" ng-controller="DeleteKeyController"></a>
+          <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <div class="clear"></div>
 </section>
