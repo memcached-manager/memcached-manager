@@ -26,12 +26,8 @@
         </div>
 
         <div class="key-actions">
-          <div ng-controller="DeleteKeyController" class="delete">
-            <a ng-click="removeKey(key)" class="a-link">x</a>
-          </div>
-          <div class="edit">
-            <a href="#/edit/{{ key.key }}" class="a-link">e</a>
-          </div>
+          <a ng-click="removeKey(key)" class="icon-remove" ng-controller="DeleteKeyController"></a>
+          <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
         </div>
       </li>
     </ul>
