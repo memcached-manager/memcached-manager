@@ -1,0 +1,29 @@
+/* 
+ * Ui-view: keys
+ * */
+
+.key {
+  background-color: #514845;
+  padding: 10px;
+  margin: 0px;
+  color: #c9bcb8;
+  border-bottom: 1px solid #3b3432;
+  border-top: 1px solid #6c605c;
+}
+
+.key:hover {
+  background-color: #3d3633;
+}
+
+.key-title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.expired {
+  background-color: #B5463F;
+}
+
+.not-expired {
+  background-color: #298D84;
+}

@@ -1,4 +1,17 @@
-<div ui-view="keys"></div>
-<div ui-view="key"></div>
+<div class="container">
+  <div class="sixteen columns">
+    <h1 class="remove-bottom" style="margin-top: 40px">Memcached Manager</h1>
+    <h5>Version 1.0</h5>
+    <hr />
+  </div>
+  <div class="one-third column">
+    <a href="#/new">New key</a>
+    <div ui-view="keys"></div>
+  </div>
+  <div class="two-third column">
+    <div ui-view="key"></div>
+  </div>
+</div><!-- container -->
+
+<!-- This controller is used to bootstrap the application -->
 <section ng-controller='BootstrapController'></section>
-<a href="#/new">New key</a>

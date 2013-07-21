@@ -1,15 +1,19 @@
 <section>
   <h2>Keys</h2>
   <ul>
-    <li ng-repeat='key in keys'>
-      {{ key.key }}
-      {{ key.bytes }}
-      {{ key.expires_at }}
-      {{ key.expired }}
-      <span ng-controller="DeleteKeyController">
-        <a ng-click="removeKey(key)">X</a>
-      </span>
-      <a href="#/edit/{{ key.key }}">edit</a>
+    <li ng-repeat='key in keys' class="key">
+      <div class="key-header">
+        <span class="key-title">{{ key.key }}</span>
+      </div>
+      <div class="key-data">
+        {{ key.bytes }}B
+      </div>
+      <div ng-controller="DeleteKeyController" class="delete">
+        <a ng-click="removeKey(key)" class="a-link">x</a>
+      </div>
+      <div class="edit">
+        <a href="#/edit/{{ key.key }}" class="a-link">e</a>
+      </div>
     </li>
   </ul>
 </section>
