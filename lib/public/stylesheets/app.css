@@ -3,20 +3,43 @@
  * */
 
 .key {
-  background-color: #514845;
   padding: 10px;
   margin: 0px;
-  color: #fff;
-  border-bottom: 1px solid #3b3432;
-  border-top: 1px solid #6c605c;
+  height: 40px;
+  border-top: 1px solid #eee;
+  display: block;
 }
 
 .key:hover {
-  background-color: #3d3633;
+  background-color: #f5f5f5;
+}
+
+#key-text {
+  float: left;
+  width: 60%;
+  margin-left: 10px;
+}
+
+#key-new {
+  float: right;
+  width: 30%;
+}
+
+.key-info {
+  float: left;
+  width: 75%;
+}
+
+.key-actions {
+  float: right;
+  width: 25%;
+}
+
+.clear {
+  clear: both;
 }
 
 .key-title {
-  font-size: 20px;
   font-weight: 800;
 }
 

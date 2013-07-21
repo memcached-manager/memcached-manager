@@ -1,19 +1,40 @@
 <section>
-  <h2>Keys</h2>
-  <ul>
-    <li ng-repeat='key in keys' class="key">
-      <div class="key-header">
-        <span class="key-title">{{ key.key }}</span>
-      </div>
-      <div class="key-data">
-        {{ key.bytes }}B
-      </div>
-      <div ng-controller="DeleteKeyController" class="delete">
-        <a ng-click="removeKey(key)" class="a-link">x</a>
-      </div>
-      <div class="edit">
-        <a href="#/edit/{{ key.key }}" class="a-link">e</a>
-      </div>
-    </li>
-  </ul>
+  <h3>memcached manager</h3>
+  <hr>
+  <section id="key-menu">
+    <div id="key-text">
+      <h3>keys</h3>
+    </div>
+
+    <div id="key-new">
+      <a href="#/new" class="button">New key</a>
+    </div>
+  </section>
+
+  <div class="clear"></div>
+
+  <section id="key-keys">
+    <ul>
+      <li ng-repeat='key in keys' class="key">
+        <div class="key-info">
+          <div class="key-header">
+            <span class="key-title">{{ key.key }}</span>
+          </div>
+          <div id="key-data">
+            Size: {{ key.bytes }}B
+          </div>
+        </div>
+
+        <div class="key-actions">
+          <div ng-controller="DeleteKeyController" class="delete">
+            <a ng-click="removeKey(key)" class="a-link">x</a>
+          </div>
+          <div class="edit">
+            <a href="#/edit/{{ key.key }}" class="a-link">e</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <div class="clear"></div>
 </section>
