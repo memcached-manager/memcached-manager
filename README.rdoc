@@ -22,8 +22,7 @@ Todo.
 
 == Roadmap
 
-* Finish angular.js actions
-* Develop frontend & artwork
+* Develop frontend & artwork (in progress)
 * Generate GEM
 
 == Running(for now...)
