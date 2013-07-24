@@ -23,6 +23,7 @@ Todo.
 == Roadmap
 
 * Develop frontend & artwork (in progress)
+* Favicon
 * Generate GEM
 
 == Running(for now...)
