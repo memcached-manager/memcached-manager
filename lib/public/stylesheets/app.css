@@ -31,6 +31,10 @@
   width: 85%;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .key-actions {
   float: right;
   padding-top: 10px;
