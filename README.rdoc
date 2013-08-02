@@ -26,6 +26,11 @@ Todo.
 * Favicon
 * Generate GEM
 
+
+== Should be done in the future
+
+* Update API/frontend in order to use http statuses for errors, creation and so on.
+
 == Running(for now...)
 
 Just run:
