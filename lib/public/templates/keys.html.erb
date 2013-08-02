@@ -18,7 +18,7 @@
       <li ng-repeat='key in keys' class="key">
         <div class="key-info">
           <div class="key-header">
-            <span class="key-title">{{ key.key }}</span>
+            <a class="key-title" href="#/key/{{ key.key }}">{{ key.key }}</a>
           </div>
           <div id="key-data">
             Size: {{ key.bytes }}B
