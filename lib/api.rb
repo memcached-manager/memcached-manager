@@ -96,5 +96,9 @@ module MemcachedManager
         { key: params[:key] }.to_json
       end
     end
+
+    get '/stats.json' do
+      memcached_connection.stats.to_json
+    end
   end
 end
