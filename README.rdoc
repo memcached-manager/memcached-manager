@@ -35,7 +35,14 @@ Todo.
 
 Just run:
 
+    bundle install
     rackup
+
+== Running the test suite
+
+Have `memcached` run on `localhost:11211` then run:
+
+    bundle exec rake
 
 == Contributing to Memcached Manager
  
