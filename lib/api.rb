@@ -68,7 +68,7 @@ module MemcachedManager
 
     get '/keys.json' do
       api_response do
-        memcached_inspect(host: memcached_host(session), port: memcached_port(session)).to_json
+        memcached_inspect(host: memcached_host(session), port: memcached_port(session))
       end
     end
 
