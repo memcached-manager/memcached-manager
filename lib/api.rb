@@ -51,10 +51,7 @@ module MemcachedManager
       if errors.any?
         { errors: errors }.to_json
       else
-        memcached_inspect(memcached_host(session), memcached_port(session))
-          .select{|pair| pair[:key] == params[:key] }
-          .first
-          .to_json
+        find_memcached_key(memcached_host(session), memcached_port(session), params[:key]).to_json
       end
     end
 
@@ -64,10 +61,7 @@ module MemcachedManager
       if errors.any?
         { errors: errors }.to_json
       else
-        memcached_inspect(memcached_host(session), memcached_port(session))
-                  .select{|pair| pair[:key] == params[:key] }
-                  .first
-                  .to_json
+        find_memcached_key(memcached_host(session), memcached_port(session), params[:key]).to_json
       end
     end
 
@@ -81,7 +75,7 @@ module MemcachedManager
       try { raise 'Key not found.' if value.nil? }
 
       if errors.any?
-        { errors: errors}.to_json
+        { errors: errors }.to_json
       else
         { key: params[:key], value: value }.to_json
       end

@@ -28,6 +28,12 @@ module Sinatra
 
       keys
     end
+
+    def find_memcached_key host, port, key
+      memcached_inspect(memcached_host(session), memcached_port(session))
+        .select{|pair| pair[:key] == key }
+        .first
+    end
   end
 end
 
