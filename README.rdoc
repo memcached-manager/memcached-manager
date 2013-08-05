@@ -44,6 +44,10 @@ Have `memcached` run on `localhost:11211` then run:
 
     bundle exec rake
 
+== Requirements
+
+Ruby >= 1.9
+
 == Contributing to Memcached Manager
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
