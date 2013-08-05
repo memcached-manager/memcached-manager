@@ -21,6 +21,7 @@ module MemcachedManager
     helpers Sinatra::MemcachedConnection
     helpers Sinatra::MemcachedInspector
     helpers Sinatra::Errors
+    helpers Sinatra::APIResponse
 
     before do
       content_type :json
