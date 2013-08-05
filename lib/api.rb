@@ -51,7 +51,7 @@ module MemcachedManager
       if errors.any?
         { errors: errors }.to_json
       else
-        find_memcached_key(memcached_host(session), memcached_port(session), params[:key]).to_json
+        memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]).to_json
       end
     end
 
@@ -61,12 +61,12 @@ module MemcachedManager
       if errors.any?
         { errors: errors }.to_json
       else
-        find_memcached_key(memcached_host(session), memcached_port(session), params[:key]).to_json
+        memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]).to_json
       end
     end
 
     get '/keys.json' do
-      memcached_inspect(memcached_host(session), memcached_port(session)).to_json
+      memcached_inspect(host: memcached_host(session), port: memcached_port(session)).to_json
     end
 
     get '/keys/:key.json' do

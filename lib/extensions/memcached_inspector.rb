@@ -1,6 +1,22 @@
 module Sinatra
   module MemcachedInspector
-    def memcached_inspect host, port
+    def memcached_inspect options
+      host = options[:host]
+      port = options[:port]
+      key = options[:key]
+
+      inspect = inspector host, port
+
+      # Filter by key if defined
+      if !key.nil?
+        inspect = inspect.select{|pair| pair[:key] == key }.first
+      end
+
+      inspect
+    end
+
+    private
+    def inspector host, port
       # Looks horrible, got it from a gist... yet, it works.
 
       keys = []
@@ -27,12 +43,6 @@ module Sinatra
       end
 
       keys
-    end
-
-    def find_memcached_key host, port, key
-      memcached_inspect(memcached_host(session), memcached_port(session))
-        .select{|pair| pair[:key] == key }
-        .first
     end
   end
 end
