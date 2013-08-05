@@ -47,6 +47,7 @@ Have `memcached` run on `localhost:11211` then run:
 == Requirements
 
 Ruby >= 1.9
+Memcached (of course)
 
 == Contributing to Memcached Manager
  
