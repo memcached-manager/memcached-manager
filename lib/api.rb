@@ -49,17 +49,13 @@ module MemcachedManager
     post '/keys.json' do
       try { memcached_connection.set(params[:key], params[:value]) }
 
-      api_response do
-        memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key])
-      end
+      api_response { memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]) }
     end
 
     put '/keys.json' do
       try { memcached_connection.replace(params[:key], params[:value]) }
 
-      api_response do
-        memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key])
-      end
+      api_response { memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]) }
     end
 
     get '/keys.json' do
