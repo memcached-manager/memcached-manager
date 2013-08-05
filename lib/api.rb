@@ -36,16 +36,14 @@ module MemcachedManager
     end
 
     get '/config.json' do
-      api_response do
-        { host: memcached_host(session), port: memcached_port(session) }
-      end
+      api_response { { host: memcached_host(session), port: memcached_port(session) } }
     end
 
     post '/config.json' do
       session['host'] = params['host']
       session['port'] = params['port']
 
-      api_response { { errors: errors } }
+      api_response { { host: memcached_host(session), port: memcached_port(session) } }
     end
 
     post '/keys.json' do
