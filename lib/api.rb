@@ -35,14 +35,12 @@ module MemcachedManager
       close_memcached
     end
 
-    # Needs refactoring
     get '/config.json' do
       api_response do
         { host: memcached_host(session), port: memcached_port(session) }
       end
     end
 
-    # Needs refactoring
     post '/config.json' do
       session['host'] = params['host']
       session['port'] = params['port']
