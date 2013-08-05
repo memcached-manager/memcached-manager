@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 Given /^there's some memcached keys avaiable$/ do
   Memcached.set('foo', 'bar')
   Memcached.set('ineed', 'togetalife')

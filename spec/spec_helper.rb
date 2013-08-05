@@ -1,4 +1,5 @@
 require 'rspec'
+require 'mocha/api'
 
 Dir.glob("lib/**/*.rb").each do |file|
   require_relative "../#{file}"
@@ -34,6 +35,7 @@ RSpec::Matchers.define :have_instance_variable do |instance_variable|
 end
 
 RSpec.configure do |config|
+  config.mock_framework = :mocha
   config.color_enabled = true
   config.formatter     = 'documentation'
 end

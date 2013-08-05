@@ -37,7 +37,9 @@ module MemcachedManager
 
     # Needs refactoring
     get '/config.json' do
-      { host: memcached_host(session), port: memcached_port(session) }.to_json
+      api_response do
+        { host: memcached_host(session), port: memcached_port(session) }
+      end
     end
 
     # Needs refactoring
@@ -45,31 +47,29 @@ module MemcachedManager
       session['host'] = params['host']
       session['port'] = params['port']
 
-      { errors: errors }.to_json
+      api_response { { errors: errors } }
     end
 
     post '/keys.json' do
       try { memcached_connection.set(params[:key], params[:value]) }
 
-      if errors.any?
-        { errors: errors }.to_json
-      else
-        memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]).to_json
+      api_response do
+        memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key])
       end
     end
 
     put '/keys.json' do
       try { memcached_connection.replace(params[:key], params[:value]) }
 
-      if errors.any?
-        { errors: errors }.to_json
-      else
-        memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]).to_json
+      api_response do
+        memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key])
       end
     end
 
     get '/keys.json' do
-      memcached_inspect(host: memcached_host(session), port: memcached_port(session)).to_json
+      api_response do
+        memcached_inspect(host: memcached_host(session), port: memcached_port(session)).to_json
+      end
     end
 
     get '/keys/:key.json' do
@@ -77,25 +77,17 @@ module MemcachedManager
 
       try { raise 'Key not found.' if value.nil? }
 
-      if errors.any?
-        { errors: errors }.to_json
-      else
-        { key: params[:key], value: value }.to_json
-      end
+      api_response { { key: params[:key], value: value } }
     end
 
     delete '/keys/:key.json' do
       try { memcached_connection.delete(params[:key]) }
 
-      if errors.any?
-        { errors: errors}.to_json
-      else
-        { key: params[:key] }.to_json
-      end
+      api_response { { key: params[:key] } }
     end
 
     get '/stats.json' do
-      memcached_connection.stats.to_json
+      api_response { memcached_connection.stats }
     end
   end
 end
