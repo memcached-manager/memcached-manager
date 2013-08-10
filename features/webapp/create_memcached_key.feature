@@ -5,5 +5,5 @@ Feature: Create memcached pair
     When I visit "#/new"
     And fill in "Key" with "foo"
     And fill in "Value" with "bar"
-    And click "create"
-    Then it should exist in memcached
+    And click "Create"
+    Then "foo" key should have the "bar" value in memcached

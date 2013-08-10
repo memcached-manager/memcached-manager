@@ -4,6 +4,9 @@ require 'faraday'
 require 'dalli'
 require 'rspec'
 require 'rspec/expectations'
+require 'capybara/poltergeist'
+
+Capybara.javascript_driver = :poltergeist
 
 World(RSpec::Matchers)
 

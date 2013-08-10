@@ -9,3 +9,8 @@ end
 When /^click "(.*?)"$/ do |button|
   click_button button
 end
+
+Then /^"(.*?)" key should have the "(.*?)" value in memcached$/ do |key, value|
+  sleep 1
+  Memcached.get(key).should == value
+end
