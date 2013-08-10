@@ -40,6 +40,8 @@ Just run:
 
 == Running the test suite
 
+First, make sure you have phantomjs installed if you want to run cukes tagged as @javascript(those who are in the features/webapp directory.
+
 Have `memcached` run on `localhost:11211` then run:
 
     bundle exec rake
