@@ -25,6 +25,7 @@ Todo.
 * Develop frontend & artwork (in progress)
 * Favicon
 * Generate GEM
+* Cuke tests for the whole app
 
 
 == Should be done in the future
