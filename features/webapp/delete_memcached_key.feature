@@ -6,6 +6,3 @@ Feature: Delete memcached pair
     When I visit "#/"
     And click on the X inside a div
     Then "foo" key shouldn't exist in memcached
-
-
-

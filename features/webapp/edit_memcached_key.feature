@@ -7,6 +7,3 @@ Feature: Edit memcached pair
     And fill in "Value" with "baz"
     And click "Edit"
     Then "foo" key should have the "baz" value in memcached
-
-
-
