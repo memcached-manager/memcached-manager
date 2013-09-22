@@ -17,3 +17,7 @@ group :test do
   gem "capybara", :require => false
   gem "faraday"
 end
+
+group :development, :test do
+  gem 'jasmine', "= 1.3.2"
+end
