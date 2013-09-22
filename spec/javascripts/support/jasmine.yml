@@ -11,6 +11,11 @@
 #   - dist/**/*.js
 #
 src_files:
+    - lib/public/javascripts/jquery-1.9.1.min.js
+    - lib/public/javascripts/angular.min.js
+    - lib/public/javascripts/angular-ui-states.min.js
+    - lib/public/javascripts/angular-resource.min.js
+    - lib/public/javascripts/application.js
     - lib/public/javascripts/**/*.js
 
 # stylesheets
