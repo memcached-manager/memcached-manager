@@ -6,7 +6,7 @@ before_install:
   - gem install bundler
 
 script:
-  rake jasmine:ci
+  rake
 
 rvm:
  - 1.9.3
