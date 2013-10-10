@@ -12,6 +12,8 @@
 #
 src_files:
     - lib/public/javascripts/jquery-1.9.1.min.js
+    - lib/public/javascripts/noty/jquery.noty.js
+    - lib/public/javascripts/noty_config.js
     - lib/public/javascripts/angular.min.js
     - lib/public/javascripts/angular-ui-states.min.js
     - lib/public/javascripts/angular-resource.min.js

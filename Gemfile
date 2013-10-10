@@ -20,4 +20,5 @@ end
 
 group :development, :test do
   gem 'jasmine', "= 1.3.2"
+  gem "cucumber"
 end
