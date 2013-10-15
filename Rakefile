@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "memcached-manager"
   gem.homepage = "http://github.com/thiagofm/memcached-manager"
   gem.license = "MIT"
-  gem.summary = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
-  gem.description = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
+  gem.summary = "A memcached manager that allows you to manage memcached keys, read stats and so on which can be run standalone or plugged to a Rails app."
+  gem.description = "A memcached manager that allows you to manage memcached keys, read stats and so on which can be run standalone or plugged to a Rails app."
   gem.email = "thiagown@gmail.com"
-  gem.authors = ["Thiago Fernandes Massa", "Pedro Nicholas Souza"]
+  gem.authors = ["Thiago Fernandes Massa"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
