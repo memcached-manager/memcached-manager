@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "memcached-manager"
-  s.version = "0.0.1"
+  s.version = "0.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thiago Fernandes Massa"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
     "config.ru",
     "features/api/create_memcached_key.feature",
     "features/api/delete_memcached_key.feature",
@@ -119,7 +120,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<sinatra-contrib>, [">= 0"])
       s.add_runtime_dependency(%q<dalli>, [">= 0"])
       s.add_runtime_dependency(%q<poltergeist>, [">= 0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.8.8"])
       s.add_development_dependency(%q<jasmine>, ["= 1.3.2"])
       s.add_development_dependency(%q<cucumber>, [">= 0"])
     else
@@ -127,7 +128,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<sinatra-contrib>, [">= 0"])
       s.add_dependency(%q<dalli>, [">= 0"])
       s.add_dependency(%q<poltergeist>, [">= 0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
+      s.add_dependency(%q<jeweler>, ["~> 1.8.8"])
       s.add_dependency(%q<jasmine>, ["= 1.3.2"])
       s.add_dependency(%q<cucumber>, [">= 0"])
     end
@@ -136,7 +137,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<sinatra-contrib>, [">= 0"])
     s.add_dependency(%q<dalli>, [">= 0"])
     s.add_dependency(%q<poltergeist>, [">= 0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
+    s.add_dependency(%q<jeweler>, ["~> 1.8.8"])
     s.add_dependency(%q<jasmine>, ["= 1.3.2"])
     s.add_dependency(%q<cucumber>, [">= 0"])
   end
