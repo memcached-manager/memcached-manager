@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thiago Fernandes Massa"]
   s.date = "2013-10-15"
-  s.description = "A memcached manager that allows you to manage memcached keys, read stats and so on which can be run standalone or plugged to a Rails app."
+  s.description = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
   s.email = "thiagown@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -89,6 +89,10 @@ Gem::Specification.new do |s|
     "lib/views/index.erb",
     "lib/views/layout.erb",
     "lib/webapp.rb",
+    "memcached-manager.gemspec",
+    "spec/javascripts/angular/controllers/list_keys_controller_spec.js",
+    "spec/javascripts/angular/services/notification_spec.js",
+    "spec/javascripts/angular/services/resource_spec.js",
     "spec/javascripts/angular/services/response_spec.js",
     "spec/javascripts/helpers/SpecHelper.js",
     "spec/javascripts/helpers/angular-mocks.js",
@@ -105,7 +109,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"
-  s.summary = "A memcached manager that allows you to manage memcached keys, read stats and so on which can be run standalone or plugged to a Rails app."
+  s.summary = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
