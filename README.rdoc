@@ -64,8 +64,6 @@ Memcached (of course)
 == Maintainers
 
 * thiagofm[http://github.com/thiagofm]
-* pnicholas[http://github.com/pnicholas]
-
 
 == Copyright
 
