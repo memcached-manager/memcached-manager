@@ -26,6 +26,15 @@ end
 Jeweler::RubygemsDotOrgTasks.new
 
 # Tests
+begin
+  require 'jasmine'
+  load 'jasmine/tasks/jasmine.rake'
+rescue LoadError
+  task :jasmine do
+    abort "Jasmine is not available. In order to run jasmine, you must: (sudo) gem install jasmine"
+  end
+end
+
 require 'cucumber'
 require 'cucumber/rake/task'
 
@@ -40,13 +49,9 @@ RSpec::Core::RakeTask.new do |t|
   t.pattern = "./spec/**/*_spec.rb"
 end
 
-task :default => [:features, :spec]
-
-begin
-  require 'jasmine'
-  load 'jasmine/tasks/jasmine.rake'
-rescue LoadError
-  task :jasmine do
-    abort "Jasmine is not available. In order to run jasmine, you must: (sudo) gem install jasmine"
-  end
+task :jasmineci do
+  system("export DISPLAY=:99.0 && bundle exec rake jasmine:ci")
+  raise "#{cmd} failed!" unless $?.exitstatus == 0
 end
+
+task :default => [:jasmineci, :features, :spec]

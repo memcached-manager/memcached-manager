@@ -5,6 +5,9 @@ before_script:
 before_install:
   - gem install bundler
 
+script:
+  rake
+
 rvm:
  - 1.9.3
  - 2.0.0
