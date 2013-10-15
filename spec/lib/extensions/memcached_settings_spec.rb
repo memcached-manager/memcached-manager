@@ -4,6 +4,11 @@ describe Sinatra::MemcachedSettings do
   let(:configured_session) { { 'host' => 'i.am', 'port' => '1337' } }
   let(:empty_session) { {} }
   let(:klass) { Class.new.extend(Sinatra::MemcachedSettings) }
+ 
+  before :each do
+    ENV.stubs(:[]).with("memcached_host").returns(nil)
+    ENV.stubs(:[]).with("memcached_port").returns(nil)
+  end
 
   context '#memcached_host' do
     it "host exists" do
@@ -12,6 +17,11 @@ describe Sinatra::MemcachedSettings do
 
     it "host doesn't exist" do
       klass.memcached_host(empty_session).should eql 'localhost'
+    end
+
+    it "host is set as an env variable" do
+      ENV.stubs(:[]).with("memcached_host").returns('ruby-lang.org')
+      klass.memcached_host(empty_session).should eql 'ruby-lang.org'
     end
   end
 
@@ -22,6 +32,11 @@ describe Sinatra::MemcachedSettings do
 
     it "port doesn't exist" do
       klass.memcached_port(empty_session).should eql '11211'
+    end
+
+    it "port is set as an env variable" do
+      ENV.stubs(:[]).with("memcached_port").returns('9000')
+      klass.memcached_port(empty_session).should eql '9000'
     end
   end
 
