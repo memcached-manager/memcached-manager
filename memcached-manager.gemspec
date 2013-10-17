@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.date = "2013-10-17"
   s.description = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
   s.email = "thiagown@gmail.com"
+  s.executables = ["memcached-manager"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -25,6 +26,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bin/memcached-manager",
     "config.ru",
     "features/api/create_memcached_key.feature",
     "features/api/delete_memcached_key.feature",
@@ -119,6 +121,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
       s.add_runtime_dependency(%q<sinatra-contrib>, [">= 0"])
       s.add_runtime_dependency(%q<dalli>, [">= 0"])
+      s.add_runtime_dependency(%q<vegas>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.8"])
       s.add_development_dependency(%q<jasmine>, ["= 1.3.2"])
       s.add_development_dependency(%q<cucumber>, [">= 0"])
@@ -126,6 +129,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<sinatra-contrib>, [">= 0"])
       s.add_dependency(%q<dalli>, [">= 0"])
+      s.add_dependency(%q<vegas>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.8"])
       s.add_dependency(%q<jasmine>, ["= 1.3.2"])
       s.add_dependency(%q<cucumber>, [">= 0"])
@@ -134,6 +138,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<sinatra>, [">= 0"])
     s.add_dependency(%q<sinatra-contrib>, [">= 0"])
     s.add_dependency(%q<dalli>, [">= 0"])
+    s.add_dependency(%q<vegas>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.8"])
     s.add_dependency(%q<jasmine>, ["= 1.3.2"])
     s.add_dependency(%q<cucumber>, [">= 0"])

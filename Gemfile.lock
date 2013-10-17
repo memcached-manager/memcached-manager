@@ -110,6 +110,8 @@ GEM
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
     tilt (1.4.1)
+    vegas (0.1.11)
+      rack (>= 1.0.0)
     websocket (1.0.7)
     websocket-driver (0.3.0)
     xpath (2.0.0)
@@ -131,3 +133,4 @@ DEPENDENCIES
   rspec
   sinatra
   sinatra-contrib
+  vegas

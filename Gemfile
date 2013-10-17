@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem "sinatra"
 gem "sinatra-contrib"
 gem "dalli"
+gem "vegas"
 
 group :development do
   gem "jeweler", "~> 1.8.8"

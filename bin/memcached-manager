@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'vegas'
+rescue LoadError
+  require 'rubygems'
+  require 'vegas'
+end
+
+require_relative './../lib/webapp'
+require_relative './../lib/api'
+
+options = Vegas::WINDOWS ? {:foreground => true} : {}
+Vegas::Runner.new(Rack::URLMap.new({ "/api" => MemcachedManager::API.new, "/" => MemcachedManager::Webapp.new }), 'memcached-manager', options) do |runner, opts, app|
+end
