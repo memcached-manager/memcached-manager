@@ -24,7 +24,7 @@ Todo.
 
 * Develop frontend & artwork (in progress)
 * Favicon
-* Generate GEM
+* Add memcached host & port configs hooked to the binary
 
 
 == Should be done in the future
