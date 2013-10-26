@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "memcached-manager"
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thiago Fernandes Massa"]
-  s.date = "2013-10-17"
+  s.date = "2013-10-26"
   s.description = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
   s.email = "thiagown@gmail.com"
   s.executables = ["memcached-manager"]
@@ -113,6 +113,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"
   s.summary = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
+  s.test_files = ["spec/javascripts", "spec/javascripts/angular", "spec/javascripts/angular/controllers", "spec/javascripts/angular/controllers/list_keys_controller_spec.js", "spec/javascripts/angular/services", "spec/javascripts/angular/services/notification_spec.js", "spec/javascripts/angular/services/resource_spec.js", "spec/javascripts/angular/services/response_spec.js", "spec/javascripts/helpers", "spec/javascripts/helpers/angular-mocks.js", "spec/javascripts/helpers/SpecHelper.js", "spec/javascripts/support", "spec/javascripts/support/jasmine.yml", "spec/javascripts/support/jasmine_helper.rb", "spec/lib", "spec/lib/extensions", "spec/lib/extensions/api_response_spec.rb", "spec/lib/extensions/error_spec.rb", "spec/lib/extensions/memcached_connection_spec.rb", "spec/lib/extensions/memcached_inspector_spec.rb", "spec/lib/extensions/memcached_settings_spec.rb", "spec/spec_helper.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
