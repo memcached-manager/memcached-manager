@@ -1,12 +1,10 @@
-= IN DEVELOPMENT, DON'T USE YET
-
 == Memcached Manager
 
-A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app.
+A single-page sinatra memcached manager/admin that allows you to read stats, view, edit and create keys from memcached. Also easily pluggable to a Rails/Rack app.
 
 {<img src="https://travis-ci.org/thiagofm/memcached-manager.png" />}[https://travis-ci.org/thiagofm/memcached-manager] {<img src="https://codeclimate.com/github/thiagofm/memcached-manager.png" />}[https://codeclimate.com/github/thiagofm/memcached-manager]
 
-== Installation
+== Installating & running
 
 1. Install the gem.
 
@@ -16,7 +14,7 @@ A sinatra memcached-manager that allows you to view status, flush/view keys and 
 
     memcached-manager
 
-== Plugging memcached manager to an existing Rails app.
+== Plugging memcached manager to an existing Rails app
 
 Todo.
 
@@ -25,18 +23,7 @@ Todo.
 * Develop frontend & artwork (in progress)
 * Favicon
 * Add memcached host & port configs hooked to the binary
-
-
-== Should be done in the future
-
 * Update API/frontend in order to use http statuses for errors, creation and so on.
-
-== Running(for now...)
-
-Just run:
-
-    bundle install
-    rackup
 
 == Running the test suite
 
