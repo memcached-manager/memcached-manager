@@ -10,7 +10,7 @@ A single-page sinatra memcached manager/admin that allows you to read stats, vie
 
     gem install memcached-manager
     
-2. Run memcached-manager
+2. Run memcached-manager with your memcached up
 
     memcached-manager
 
