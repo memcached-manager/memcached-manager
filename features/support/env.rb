@@ -5,6 +5,7 @@ require 'dalli'
 require 'rspec'
 require 'rspec/expectations'
 require 'capybara/poltergeist'
+require 'sinatra'
 
 Capybara.javascript_driver = :poltergeist
 
