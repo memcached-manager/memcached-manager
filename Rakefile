@@ -23,6 +23,9 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["Thiago Fernandes Massa"]
   gem.test_files = Dir.glob('spec/**/*')
   gem.executables = %w(memcached-manager)
+  gem.require_paths = ["lib"]
+  gem.files = Dir["config.ru"]
+  
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
