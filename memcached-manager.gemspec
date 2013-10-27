@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "memcached-manager"
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thiago Fernandes Massa"]
-  s.date = "2013-10-26"
+  s.date = "2013-10-27"
   s.description = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
   s.email = "thiagown@gmail.com"
   s.executables = ["memcached-manager"]
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".rspec",
     ".travis.yml",
+    "CONTRIBUTING.md",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
