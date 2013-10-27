@@ -14,6 +14,14 @@ A single-page sinatra memcached manager/admin that allows you to read stats, vie
 
     memcached-manager
 
+If you are running memcached on a different host/port than its defaults(locahost:11211)
+
+    memcached-manager -H foo.bar -P 1337
+
+or
+
+    memcached-manager --memcached-host foo.bar --memcached-port 1337
+
 == Plugging memcached manager to an existing Rails app
 
 Todo.

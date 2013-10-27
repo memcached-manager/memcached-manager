@@ -15,7 +15,6 @@ Have `memcached` run on `localhost:11211` then run:
 
 * Develop frontend & artwork (in progress)
 * Favicon
-* Add memcached host & port configs hooked to the binary
 * Update API/frontend in order to use http statuses for errors, creation and so on.
 
 == Making a pull request?
