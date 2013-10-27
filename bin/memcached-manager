@@ -10,7 +10,7 @@ end
 require_relative './../lib/webapp'
 require_relative './../lib/api'
 
-options = Vegas::WINDOWS ? {} : {}
+options = Vegas::WINDOWS ? {:foreground => true} : {}
 Vegas::Runner.new(Rack::URLMap.new({ "/api" => MemcachedManager::API.new, "/" => MemcachedManager::Webapp.new }), 'memcached-manager', options) do |runner, opts, app|
   opts.on('-H host', '--memcached-host H', 'Define memcached host') do |mh|
     ENV['memcached_host'] = mh
