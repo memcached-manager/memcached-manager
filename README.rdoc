@@ -24,7 +24,21 @@ or
 
 == Plugging memcached manager to an existing Rails app
 
-Todo.
+Just mount it in **config/routes.rb**:
+
+```ruby
+mount MemcachedManager::Routes, :at => '/mm'
+
+```
+So it will be accessible in the /mm route of your application.
+
+
+If you want to specify a different config than the defaults(localhost:11211) add an `.env` file with the following:
+
+```
+memcached_host: foo.bar
+memcached_port: 1337
+```
 
 == Requirements
 

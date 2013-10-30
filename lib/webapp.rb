@@ -8,6 +8,7 @@ module MemcachedManager
     enable :sessions
 
     get '/' do
+      @engine_path = request.script_name
       erb :index
     end
   end

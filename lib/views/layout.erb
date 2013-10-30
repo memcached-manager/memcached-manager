@@ -17,12 +17,11 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="stylesheets/base.css">
-    <link rel="stylesheet" href="stylesheets/skeleton.css">
-    <link rel="stylesheet" href="stylesheets/layout.css">
-    <link rel="stylesheet" href="stylesheets/layout.css">
-    <link rel="stylesheet" href="stylesheets/icons.css">
-    <link rel="stylesheet" href="stylesheets/app.css">
+    <link rel="stylesheet" href="<%= @engine_path %>/stylesheets/base.css">
+    <link rel="stylesheet" href="<%= @engine_path %>/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="<%= @engine_path %>/stylesheets/layout.css">
+    <link rel="stylesheet" href="<%= @engine_path %>/stylesheets/icons.css">
+    <link rel="stylesheet" href="<%= @engine_path %>/stylesheets/app.css">
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,19 +33,23 @@
   </head>
   <body>
     <%= yield %>
-    <script type='text/javascript' src='/javascripts/jquery-1.9.1.min.js'></script>
-    <script type='text/javascript' src='/javascripts/angular.min.js'></script>
-    <script type='text/javascript' src='/javascripts/angular-resource.min.js'></script>
-    <script type='text/javascript' src='/javascripts/angular-ui-states.min.js'></script>
-    <script type='text/javascript' src='/javascripts/application.js'></script>
-    <script type='text/javascript' src='/javascripts/angular/routes.js'></script>
-    <script type='text/javascript' src='/javascripts/angular/controllers.js'></script>
-    <script type='text/javascript' src='/javascripts/angular/services/notification.js'></script>
-    <script type='text/javascript' src='/javascripts/angular/services/response.js'></script>
-    <script type='text/javascript' src='/javascripts/angular/services/resources.js'></script>
-    <script type='text/javascript' src='/javascripts/noty/jquery.noty.js'></script>
-    <script type='text/javascript' src='/javascripts/noty/layouts/top.js'></script>
-    <script type='text/javascript' src='/javascripts/noty/themes/default.js'></script>
-    <script type='text/javascript' src='/javascripts/noty_config.js'></script>
+    <script type='text/javascript'>
+      // This is used because sometimes the app is a Rails/Rack mounted application and it's base path is different.
+      window.basePath = '<%= @engine_path %>';
+    </script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/jquery-1.9.1.min.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular.min.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular-resource.min.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular-ui-states.min.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/application.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/routes.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/controllers.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/services/notification.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/services/response.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/services/resources.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/noty/jquery.noty.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/noty/layouts/top.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/noty/themes/default.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/noty_config.js'></script>
   </body>
 </html>
