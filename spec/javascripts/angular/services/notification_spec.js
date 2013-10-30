@@ -8,6 +8,8 @@ describe("Factory Notification", function() {
       service = Notification;
     });
     message = "Some random message";
+
+    window.basePath = '';
   });
 
   describe("alert method", function(){

@@ -7,6 +7,8 @@ describe("Factory Resource", function() {
     inject(function($injector){
       $httpBackend = $injector.get('$httpBackend');
     });
+
+    window.basePath = '';
   });
 
   it("requests a bunch of keys correctly", inject(function(Keys){

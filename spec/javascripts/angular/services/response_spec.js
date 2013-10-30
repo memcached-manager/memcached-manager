@@ -6,6 +6,8 @@ describe("Factory Response", function() {
     inject(function(Response){
       service = Response;
     });
+
+    window.basePath = '';
   });
 
   describe("valid method", function(){

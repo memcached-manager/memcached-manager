@@ -13,6 +13,7 @@ describe('ListKeysController', function(){
     beforeEach(module('memcached-keys'));
 
     beforeEach(inject(function($rootScope, $controller, $location){
+      window.basePath = '';
       location = $location;
       scope = $rootScope.$new();
       ctrl = $controller('ListKeysController', {
