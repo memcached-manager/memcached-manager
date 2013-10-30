@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "memcached-manager"
-  s.version = "0.2.5"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thiago Fernandes Massa"]
-  s.date = "2013-10-27"
+  s.date = "2013-10-30"
   s.description = "A sinatra memcached-manager that allows you to view status, flush/view keys and so on. Also easily pluggable to a Rails app."
   s.email = "thiagown@gmail.com"
   s.executables = ["memcached-manager"]
@@ -64,6 +64,7 @@ Gem::Specification.new do |s|
     "lib/extensions/memcached_connection.rb",
     "lib/extensions/memcached_inspector.rb",
     "lib/extensions/memcached_settings.rb",
+    "lib/memcached-manager.rb",
     "lib/public/images/glyphicons-halflings-white.png",
     "lib/public/images/glyphicons-halflings.png",
     "lib/public/javascripts/angular-resource.min.js",
@@ -90,6 +91,7 @@ Gem::Specification.new do |s|
     "lib/public/templates/new.html.erb",
     "lib/public/templates/show.html.erb",
     "lib/public/templates/stats.html.erb",
+    "lib/routes.rb",
     "lib/views/index.erb",
     "lib/views/layout.erb",
     "lib/webapp.rb",
