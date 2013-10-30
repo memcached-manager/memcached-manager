@@ -26,9 +26,7 @@ or
 
 Just mount it in +config/routes.rb+:
 
-```ruby
-mount MemcachedManager::Routes, :at => '/mm'
-```
+    mount MemcachedManager::Routes, :at => '/mm'
 
 So it will be accessible in the +/mm+ route of your application.
 
