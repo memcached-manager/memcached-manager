@@ -14,7 +14,7 @@ module MemcachedManager
   class API < Sinatra::Base
     enable :inline_templates
     enable :sessions
-    
+
     set :public_folder, 'public'
 
     helpers Sinatra::MemcachedSettings
@@ -46,16 +46,12 @@ module MemcachedManager
       api_response { { host: memcached_host(session), port: memcached_port(session) } }
     end
 
-    post '/keys.json' do
-      try { memcached_connection.set(params[:key], params[:value]) }
+    [:post, :put].each do |method|
+      send(method, '/keys.json') do
+        try { memcached_connection.set(params[:key], params[:value]) }
 
-      api_response { memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]) }
-    end
-
-    put '/keys.json' do
-      try { memcached_connection.replace(params[:key], params[:value]) }
-
-      api_response { memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]) }
+        api_response { memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]) }
+      end
     end
 
     get '/keys.json' do
