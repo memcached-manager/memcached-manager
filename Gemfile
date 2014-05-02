@@ -4,7 +4,7 @@ gem "sinatra"
 gem "sinatra-contrib"
 gem "dalli"
 gem "vegas"
-gem "thin"
+gem "thin", "~> 1.6.2"
 
 group :development do
   gem "jeweler", "~> 1.8.8"
