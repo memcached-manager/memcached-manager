@@ -24,5 +24,5 @@ API = Faraday.new do |conn| conn.adapter :rack, Rack::URLMap.new({
   })
 end
 
-MemcachedConfigs = { host: 'localhost', port: '11211' }
+MemcachedConfigs = { host: ENV['MEMCACHED_1_PORT_11211_TCP_ADDR'] || 'localhost', port: '11211' }
 Memcached        = Dalli::Client.new("#{MemcachedConfigs[:host]}:#{MemcachedConfigs[:port]}")

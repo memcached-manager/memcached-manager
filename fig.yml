@@ -1,0 +1,13 @@
+memcached :
+  image: sameersbn/memcached
+  ports:
+    - "11211"
+web:
+  build: .
+  command: bundle exec /memcached-manager/bin/memcached-manager
+  volumes:
+   - .:/memcached-manager
+  ports:
+   - "3000:5678"
+  links:
+   - memcached

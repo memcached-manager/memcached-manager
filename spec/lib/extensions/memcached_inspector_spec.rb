@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Sinatra::MemcachedInspector do
-  let(:host) { 'localhost' }
+  let(:host) { ENV['MEMCACHED_1_PORT_11211_TCP_ADDR'] || 'localhost' }
   let(:port) { '11211' }
   let(:memcached_connection) { Dalli::Client.new("#{host}:#{port}") }
   let(:klass) { Class.new.extend(Sinatra::MemcachedInspector) }
