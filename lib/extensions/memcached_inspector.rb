@@ -39,7 +39,7 @@ module Sinatra
             expired = true if Time.at(expires_time.to_i) < Time.now
             keys << { key: cache_key, bytes: bytes, expires_at: humanized_expires_time, expired: expired }
           end
-        end  
+        end
       end
 
       keys
