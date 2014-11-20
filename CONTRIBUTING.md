@@ -13,6 +13,7 @@ Have `memcached` run on `localhost:11211` then run:
 
 == Roadmap(stuff you can do)
 
+* Add config for memcached server frontend
 * Develop frontend & artwork (in progress)
 * Favicon
 * Update API/frontend in order to use http statuses for errors, creation and so on.
