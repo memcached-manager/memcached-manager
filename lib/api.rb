@@ -56,17 +56,7 @@ module MemcachedManager
 
     get '/keys.json' do
       api_response do
-        memcached_inspect(host: memcached_host(session), port: memcached_port(session))
-      end
-    end
-
-    get '/keys/search.json' do
-      api_response do
-        memcached_inspect(
-          host: memcached_host(session),
-          port: memcached_port(session),
-          query: params[:query]
-        )
+        memcached_inspect(host: memcached_host(session), port: memcached_port(session), query: params[:query])
       end
     end
 
