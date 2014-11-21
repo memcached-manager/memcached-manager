@@ -2,6 +2,7 @@
 
 Given /^there's some memcached keys avaiable$/ do
   Memcached.set('foo', 'bar')
+  Memcached.set('foo1', 'bar')
   Memcached.set('ineed', 'togetalife')
 end
 

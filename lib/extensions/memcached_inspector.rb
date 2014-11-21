@@ -4,12 +4,18 @@ module Sinatra
       host = options[:host]
       port = options[:port]
       key = options[:key]
+      query = options[:query]
 
       inspect = inspector host, port
 
       # Filter by key if defined
       if !key.nil?
         inspect = inspect.select{|pair| pair[:key] == key }.first
+      end
+
+      # Filter keys by query/regexp
+      if !query.nil?
+        inspect = inspect.select{|pair| pair[:key] =~ Regexp.new(query) }
       end
 
       inspect

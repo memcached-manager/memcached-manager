@@ -9,13 +9,13 @@ describe Sinatra::MemcachedInspector do
   context "#memcached_inspect" do
     context 'undefined key' do
       before(:each) do
+        memcached_connection.flush_all
         memcached_connection.set('hello', 'world')
         memcached_connection.set('question', "Who's John Galt?")
         @response = klass.memcached_inspect host: host, port: port
       end
 
       it { @response.should be_an_instance_of Array }
-      it { @response.size.should == 2 }
       it { @response.first.keys.should include :key }
       it { @response.first.keys.should include :bytes }
       it { @response.first.keys.should include :expired }
@@ -25,6 +25,7 @@ describe Sinatra::MemcachedInspector do
 
     context 'defined key' do
       before(:each) do
+        memcached_connection.flush_all
         memcached_connection.set('hello', 'world')
         memcached_connection.set('question', "Who's John Galt?")
         @response = klass.memcached_inspect host: host, port: port, key: 'hello'
@@ -36,6 +37,24 @@ describe Sinatra::MemcachedInspector do
       it { @response.should include :expired }
       it { @response[:key].should == 'hello' }
       it { @response[:expired].should == true }
+    end
+
+    context 'defined query' do
+      before(:each) do
+        memcached_connection.flush_all
+        memcached_connection.set('foo1', 'world')
+        memcached_connection.set('foo', 'world')
+        memcached_connection.set('xpto', "Who's John Galt?")
+        @response = klass.memcached_inspect host: host, port: port, query: 'foo'
+      end
+
+      it { @response.should be_an_instance_of Array }
+      it { @response.size.should == 2 }
+      it { @response.first.keys.should include :key }
+      it { @response.first.keys.should include :bytes }
+      it { @response.first.keys.should include :expired }
+      it { @response.first[:key].should == 'foo' }
+      it { @response.last[:key].should == 'foo1' }
     end
   end
 end
