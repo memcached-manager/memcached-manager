@@ -50,7 +50,7 @@ a.push_button {
 	line-height:43px;
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 	display: block;
-	margin: 20px;
+	margin: 28px 14px 28px 14px;
 }
 
 .push_button:active {
