@@ -1,0 +1,55 @@
+.green-input::-webkit-input-placeholder, input.green-input::-webkit-input-placeholder {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  color: #75bdb5;
+}
+
+.green-input:-moz-placeholder, input.green-input:-moz-placeholder {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  color: #75bdb5;
+}
+
+.green-input::-moz-placeholder, input.green-input::-moz-placeholder {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  color: #75bdb5;
+}
+
+.green-input:-ms-input-placeholder, input.green-input:-ms-input-placeholder {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  color: #75bdb5;
+}
+
+.green-input:hover, input.green-input:hover {
+	background: #569c95;
+}
+
+.green-input:focus, input.green-input:focus {
+  border: 0;
+  border-bottom: 5px solid #0c2724;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 9px 0px #2c4e4a;
+  -moz-box-shadow:    0px 0px 9px 0px #2c4e4a;
+  box-shadow:         0px 0px 9px 0px #2c4e4a;
+}
+
+.green-input, input.green-input {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  color: #fff;
+  background-color: #448780;
+  height: 25px;
+  -moz-border-radius:0;
+  border-radius:0;
+  border: 0;
+  padding:8px 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 270px;
+  border-bottom: 5px solid #2c4e4a;
+}
+
