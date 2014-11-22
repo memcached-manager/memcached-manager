@@ -4,6 +4,12 @@
 
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  background-color: #BBC7C5;
+}
+
+.container {
+  background-color: #fff;
+  border-bottom: 5px solid #999;
 }
 
 .text-content {
@@ -28,6 +34,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+#key-keys a:hover {
+  text-decoration: underline;
 }
 
 #settings-button {
