@@ -6,6 +6,10 @@ body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 }
 
+.text-content {
+  max-width: 620px;
+}
+
 .key {
   font-size: 13px;
   padding-top: 10px;
