@@ -3,8 +3,41 @@
 }
 
 a.push_button {
-  color: #fff
+  color: #fff;
 }
+
+.push:active {
+	-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+	top:5px;
+}
+
+.push:hover, .push:focus {
+  color: #fff;
+}
+
+.push {
+  float: left;
+  letter-spacing: 1px;
+	position: relative;
+	height:40px;
+	text-align:center;
+	color:#FFF;
+	text-decoration:none;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.form-button-container {
+  width: 300px;
+}
+
+.form-button {
+  float: right;
+}
+
 .push_button {
   float: left;
   letter-spacing: 1px;
@@ -37,7 +70,7 @@ a.push_button {
 	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #2c4e4a, 0 4px 2px rgba(0, 0, 0, .5);
 }
 
-.green:hover {
+.green:hover, .green:focus {
 	background: #569c95;
 }
 
@@ -45,17 +78,14 @@ a.push_button {
 	text-shadow:-1px -1px 0 #A84155;
 	background: #D25068;
 	border:1px solid #D25068;
-	
 	background-image:-webkit-linear-gradient(top, #F66C7B, #D25068);
 	background-image:-moz-linear-gradient(top, #F66C7B, #D25068);
 	background-image:-ms-linear-gradient(top, #F66C7B, #D25068);
 	background-image:-o-linear-gradient(top, #F66C7B, #D25068);
 	background-image:linear-gradient(to bottom, #F66C7B, #D25068);
-	
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
-	
 	-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
 	-moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
 	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
@@ -79,11 +109,9 @@ a.push_button {
 	background-image:-ms-linear-gradient(top, #48C6D4, #3EACBA);
 	background-image:-o-linear-gradient(top, #48C6D4, #3EACBA);
 	background-image:linear-gradient(top, #48C6D4, #3EACBA);
-	
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
-	
 	-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
 	-moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
 	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);

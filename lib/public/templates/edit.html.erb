@@ -1,6 +1,8 @@
 <h2>Edit key</h2>
 <form ng-controller='UpdateKeyController' ng-submit='updateKey()'>
   <p>Key: {{pair.key}}</p>
-  <textarea ng-model='pair.value' placeholder='Value' type='text' class='green-input'></textarea>
-  <button>Edit</button>
+  <textarea ng-model='pair.value' placeholder='Value' type='text' class='brown-input'></textarea>
+  <div class='form-button-container'>
+    <button class='push green form-button'>Update key</button>
+  </div>
 </form>
