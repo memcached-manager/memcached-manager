@@ -1,22 +1,15 @@
 <section>
   <h3 ng-click="showKeys()">memcached manager</h3>
-  <a href="#/config" class="icon-cog"> settings</a>
-  <hr>
-  <section id="key-menu">
-    <div id="key-text">
-      <h3>keys</h3>
-    </div><!-- key-text -->
 
-    <div id="key-new">
-      <a href="#/new" class="button">New key</a><!-- button -->
-    </div>
-  </section>
-
-  <div class="clear"></div>
 
   <div>
-    <a href="#/new" class="push_button red">New key</a><!-- button -->
-    <a href="#/config" class="push_button red">Settings</a>
+    <a href="#/new" class="push_button green">
+      <span class='icon-plus icon-white spaced-icon'></span>New key
+    </a><!-- button -->
+    <div class="clear"></div>
+    <a href="#/config" class="push_button green">
+      <span class='icon-cog icon-white spaced-icon'></span>Settings
+    </a>
   </div>
   <input ng-model='query' class='search' ng-change='filterByQuery()' placeholder='Search keys with a regexp' type='text'>
   <section id="key-keys">
