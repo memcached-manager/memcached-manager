@@ -2,17 +2,28 @@
  * Ui-view: keys
  * */
 
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+
 .key {
-  padding: 10px;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-bottom: 10px;
   margin: 0px;
-  height: 40px;
-  border-top: 1px solid #eee;
+  height: 20px;
+  border-bottom: 1px solid #eee;
   display: block;
-  background-color: #f5f5f5;
 }
 
 .key:hover {
-  background-color: #eee;
+  background-color: #eafcfa;
+}
+
+a {
+  text-decoration: none;
 }
 
 #key-text {
@@ -21,14 +32,81 @@
   margin-left: 10px;
 }
 
+input.search::-webkit-input-placeholder {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #75bdb5;
+}
+
+input.search:-moz-placeholder {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #75bdb5;
+}
+
+input.search::-moz-placeholder {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #75bdb5;
+}
+
+input.search:-ms-input-placeholder {  
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #75bdb5;
+}
+
+input.search:focus {
+  border: 0;
+  border-bottom: 5px solid #0c2724;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 9px 0px #2c4e4a;
+  -moz-box-shadow:    0px 0px 9px 0px #2c4e4a;
+  box-shadow:         0px 0px 9px 0px #2c4e4a;
+}
+
+input.search {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #448780;
+  height: 25px;
+  -moz-border-radius:0;
+  border-radius:0;
+  border: 0;
+  padding:8px 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  width: 270px;
+  border-bottom: 5px solid #2c4e4a;
+}
+
 #key-new {
   float: right;
   width: 30%;
 }
 
+.key-data {
+  text-shadow: 1px 1px 0px #782d15;
+  border-bottom: 1px solid #782d15;
+  -moz-border-radius:10px 10px 10px 10px;
+  border-radius:7px 7px 7px 7px;
+  color: #fff;
+  background-color: #be5330;
+  padding: 1px 5px 1px 4px;
+  margin-right: 3px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
 .key-info {
   float: left;
-  width: 85%;
 }
 
 .pointer {
@@ -37,8 +115,6 @@
 
 .key-actions {
   float: right;
-  padding-top: 10px;
-  width: 15%;
 }
 
 .clear {
@@ -46,5 +122,4 @@
 }
 
 .key-title {
-  font-weight: 800;
 }

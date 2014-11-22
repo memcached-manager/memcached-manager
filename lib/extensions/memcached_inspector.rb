@@ -15,7 +15,7 @@ module Sinatra
 
       # Filter keys by query/regexp
       if !query.nil?
-        inspect = inspect.select{|pair| pair[:key] =~ Regexp.new(query) }
+        inspect = inspect.select{|pair| pair[:key] =~ Regexp.new(query, 'i') }
       end
 
       inspect
