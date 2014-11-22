@@ -7,6 +7,12 @@ body {
   background-color: #BBC7C5;
 }
 
+h1, h2, h3, h4 {
+  text-shadow: 1px 1px 0px #782d15;
+  color: #be5330;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+
 .container {
   background-color: #fff;
   border-bottom: 5px solid #999;
