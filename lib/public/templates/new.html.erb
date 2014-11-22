@@ -2,5 +2,7 @@
 <form ng-controller='CreateKeyController' ng-submit='createKey()'>
   <input ng-model='pair.key' placeholder='Key' type='text' class='brown-input'>
   <textarea ng-model='pair.value' placeholder='Value' type='text' class='brown-input'></textarea>
-  <button class="push green">Create key</button>
+  <div class='form-button-container'>
+    <button class="push green form-button">Create key</button>
+  </div>
 </form>

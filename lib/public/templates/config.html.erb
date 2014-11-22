@@ -2,5 +2,7 @@
 <form ng-controller='UpdateConfigController' ng-submit='updateConfig()'>
   <input ng-model='config.host' placeholder='Host' type='text' class='brown-input'></textarea>
   <input ng-model='config.port' placeholder='Port' type='text' class='brown-input'></textarea>
-  <button class="push green">Update settings</button>
+  <div class='form-button-container'>
+    <button class="push green form-button">Update settings</button>
+  </div>
 </form>
