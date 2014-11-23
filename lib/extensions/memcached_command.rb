@@ -7,7 +7,7 @@ module Sinatra
 
       memcached_connection = Net::Telnet::new("Host" => host, "Port" => port, "Timeout" => 3)
       memcached_connection.cmd("String" => command, "Match" => /^END/) do |response|
-        return {response: response}
+        return {response: response.inspect}
       end
     end
   end
