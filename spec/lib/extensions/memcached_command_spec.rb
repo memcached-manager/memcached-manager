@@ -6,8 +6,8 @@ describe Sinatra::MemcachedCommand do
   let(:memcached_connection) { Dalli::Client.new("#{host}:#{port}") }
   let(:klass) { Class.new.extend(Sinatra::MemcachedCommand) }
 
-  it 'runs a command in memcached', wip: true do
+  it 'runs a command in memcached' do
     memcached_connection.set('hello', 'world')
-    expect(klass.run(host: host, port: port, command: 'get hello')).to match /world/
+    expect(klass.memcached_command(host: host, port: port, command: 'get hello')[:response]).to match /world/
   end
 end

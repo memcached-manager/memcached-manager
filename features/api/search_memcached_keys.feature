@@ -1,5 +1,4 @@
 @api
-@wip
 Feature: Search memcached keys
   Scenario: Success
     Given there's some memcached keys avaiable

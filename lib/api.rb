@@ -19,6 +19,7 @@ module MemcachedManager
 
     helpers Sinatra::MemcachedSettings
     helpers Sinatra::MemcachedConnection
+    helpers Sinatra::MemcachedCommand
     helpers Sinatra::MemcachedInspector
     helpers Sinatra::Errors
     helpers Sinatra::APIResponse
@@ -44,6 +45,12 @@ module MemcachedManager
       session['port'] = params['port']
 
       api_response { { host: memcached_host(session), port: memcached_port(session) } }
+    end
+
+    post '/run.json' do
+      api_response do
+        memcached_command(host: memcached_host(session), port: memcached_port(session), command: params[:command])
+      end
     end
 
     [:post, :put].each do |method|
