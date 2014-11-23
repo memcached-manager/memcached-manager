@@ -44,6 +44,9 @@ module MemcachedManager
       session['host'] = params['host']
       session['port'] = params['port']
 
+      # try to connect to memcached inside an try block
+      # return if it was able to connect to that specific host
+
       api_response { { host: memcached_host(session), port: memcached_port(session) } }
     end
 
