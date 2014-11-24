@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Sinatra::MemcachedInspector do
-  let(:host) { ENV['MEMCACHED_1_PORT_11211_TCP_ADDR'] || 'localhost' }
-  let(:port) { '11211' }
+  let!(:host) { ENV['MEMCACHED_1_PORT_11211_TCP_ADDR'] || 'localhost' }
+  let!(:port) { '11211' }
   let(:memcached_connection) { Dalli::Client.new("#{host}:#{port}") }
   let(:klass) { Class.new.extend(Sinatra::MemcachedInspector) }
 
@@ -12,15 +12,16 @@ describe Sinatra::MemcachedInspector do
         memcached_connection.flush_all
         memcached_connection.set('hello', 'world')
         memcached_connection.set('question', "Who's John Galt?")
-        @response = klass.memcached_inspect host: host, port: port
       end
 
-      it { @response.should be_an_instance_of Array }
-      it { @response.first.keys.should include :key }
-      it { @response.first.keys.should include :bytes }
-      it { @response.first.keys.should include :expired }
-      it { @response.first[:key].should == 'hello' }
-      it { @response.first[:expired].should == true }
+      let(:response) { klass.memcached_inspect host: host, port: port }
+
+      it { expect(response).to be_an_instance_of Array }
+      it { expect(response.first.keys).to include :key }
+      it { expect(response.first.keys).to include :bytes }
+      it { expect(response.first.keys).to include :expired }
+      it { expect(response.first[:key]).to eq 'hello' }
+      it { expect(response.first[:expired]).to be true }
     end
 
     context 'defined key' do
