@@ -4,8 +4,8 @@ describe Sinatra::MemcachedConnection do
   let(:klass) { Class.new.extend(Sinatra::MemcachedConnection) }
 
   context "#setup_memcached" do
-    before(:each) { klass.setup_memcached 'localhost', '1337' }
-    it { klass.should have_instance_variable(:memcached) }
+    before { klass.setup_memcached 'localhost', '1337' }
+    it { expect(klass).to have_instance_variable(:memcached) }
   end
 
   context "#close_memcached" do
@@ -16,10 +16,10 @@ describe Sinatra::MemcachedConnection do
   end
 
   context "#memcached_connection" do
-    before(:each) { klass.setup_memcached 'localhost', '1337' }
+    before { klass.setup_memcached 'localhost', '1337' }
 
     it "should be the instance variable of memcached" do
-      klass.instance_variable_get(:"@memcached").should be klass.memcached_connection
+      expect(klass.instance_variable_get(:"@memcached")).to eq klass.memcached_connection
     end
   end
 end
