@@ -28,16 +28,16 @@ describe Sinatra::MemcachedInspector do
       before(:each) do
         memcached_connection.flush_all
         memcached_connection.set('hello', 'world')
-        memcached_connection.set('question', "Who's John Galt?")
+        memcached_connection.set('question', "eho's John Galt?")
         @response = klass.memcached_inspect host: host, port: port, key: 'hello'
       end
 
-      it { @response.should_not be_an_instance_of Array }
-      it { @response.should include :key }
-      it { @response.should include :bytes }
-      it { @response.should include :expired }
-      it { @response[:key].should == 'hello' }
-      it { @response[:expired].should == true }
+      it { expect(@response).to_not be_an_instance_of Array }
+      it { expect(@response).to include :key }
+      it { expect(@response).to include :bytes }
+      it { expect(@response).to include :expired }
+      it { expect(@response[:key]).to eq 'hello' }
+      it { expect(@response[:expired]).to eq true }
     end
 
     context 'defined query' do
@@ -49,13 +49,13 @@ describe Sinatra::MemcachedInspector do
         @response = klass.memcached_inspect host: host, port: port, query: 'foo'
       end
 
-      it { @response.should be_an_instance_of Array }
-      it { @response.size.should == 2 }
-      it { @response.first.keys.should include :key }
-      it { @response.first.keys.should include :bytes }
-      it { @response.first.keys.should include :expired }
-      it { @response.first[:key].should == 'foo' }
-      it { @response.last[:key].should == 'foo1' }
+      it { expect(@response).to be_an_instance_of Array }
+      it { expect(@response.size).to be 2 }
+      it { expect(@response.first).to include :key }
+      it { expect(@response.first).to include :bytes }
+      it { expect(@response.first.keys).to include :expired }
+      it { expect(@response.first[:key]).to eq 'foo' }
+      it { expect(@response.last[:key]).to eq 'foo1' }
     end
   end
 end
