@@ -19,7 +19,8 @@ describe Sinatra::APIResponse do
     end
 
     context 'no error' do
-        let(:klass) { Class.new.extend(Sinatra::APIResponse) }
+      let(:klass) { Class.new.extend(Sinatra::APIResponse) }
+
       it "should respond with what's inside the block" do
         allow(klass).to receive(:errors).and_return([])
         expect(klass.api_response { {foo: 'bar'} }).to match /foo.*bar/

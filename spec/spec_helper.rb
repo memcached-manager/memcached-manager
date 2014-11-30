@@ -17,7 +17,7 @@ RSpec::Matchers.define :have_instance_variable do |instance_variable|
     @error.nil?
   end
 
-  failure_message_for_should do |object|
+  failure_message do |object|
     if @error == :presence
       "#{object} should have @#{instance_variable} instance variable"
     else

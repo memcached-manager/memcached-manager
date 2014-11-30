@@ -4,39 +4,39 @@ describe Sinatra::MemcachedSettings do
   let(:configured_session) { { 'host' => 'i.am', 'port' => '1337' } }
   let(:empty_session) { {} }
   let(:klass) { Class.new.extend(Sinatra::MemcachedSettings) }
- 
+
   before :each do
-    ENV.stubs(:[]).with("memcached_host").returns(nil)
-    ENV.stubs(:[]).with("memcached_port").returns(nil)
+    allow(ENV).to receive(:[]).with('memcached_host').and_return nil
+    allow(ENV).to receive(:[]).with('memcached_port').and_return nil
   end
 
   context '#memcached_host' do
     it "host exists" do
-      klass.memcached_host(configured_session).should eql 'i.am'
+      expect(klass.memcached_host(configured_session)).to eq 'i.am'
     end
 
     it "host doesn't exist" do
-      klass.memcached_host(empty_session).should eql 'localhost'
+      expect(klass.memcached_host(empty_session)).to eq 'localhost'
     end
 
     it "host is set as an env variable" do
-      ENV.stubs(:[]).with("memcached_host").returns('ruby-lang.org')
-      klass.memcached_host(empty_session).should eql 'ruby-lang.org'
+      allow(ENV).to receive(:[]).with("memcached_host").and_return('ruby-lang.org')
+      expect(klass.memcached_host(empty_session)).to eq 'ruby-lang.org'
     end
   end
 
   context '#memcached_port' do
     it "port exists" do
-      klass.memcached_port(configured_session).should eql '1337'
+      expect(klass.memcached_port(configured_session)).to eq '1337'
     end
 
     it "port doesn't exist" do
-      klass.memcached_port(empty_session).should eql '11211'
+      expect(klass.memcached_port(empty_session)).to eq '11211'
     end
 
     it "port is set as an env variable" do
-      ENV.stubs(:[]).with("memcached_port").returns('9000')
-      klass.memcached_port(empty_session).should eql '9000'
+      allow(ENV).to receive(:[]).with("memcached_port").and_return('9000')
+      expect(klass.memcached_port(empty_session)).to eq '9000'
     end
   end
 
@@ -45,11 +45,11 @@ describe Sinatra::MemcachedSettings do
       let(:configured_host) { {'host' => 'i.am'} }
 
       it "should be configured" do
-        klass.send(:configured?, configured_host, 'host').should be true
+        expect(klass.send(:configured?, configured_host, 'host')).to be true
       end
 
       it "should not be configured" do
-        klass.send(:configured?, configured_host, 'port').should be false
+        expect(klass.send(:configured?, configured_host, 'port')).to be false
       end
     end
 
@@ -57,11 +57,11 @@ describe Sinatra::MemcachedSettings do
       let(:configured_port) { {'port' => '1337'} }
 
       it "should be configured" do
-        klass.send(:configured?, configured_port, 'port').should be true
+        expect(klass.send(:configured?, configured_port, 'port')).to be true
       end
 
       it "should not be configured" do
-        klass.send(:configured?, configured_port, 'host').should be false
+        expect(klass.send(:configured?, configured_port, 'host')).to be false
       end
     end
   end
