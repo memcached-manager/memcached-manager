@@ -25,7 +25,7 @@ RSpec::Matchers.define :have_instance_variable do |instance_variable|
     end
   end
 
-  description do 
+  description do
     if @value.nil?
       "have instance variable @#{instance_variable}"
     else

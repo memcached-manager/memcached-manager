@@ -1,29 +1,34 @@
-<section>
-  <div>
-    <a href="#/config" class="push_button green">
-      <span class='icon-cog icon-white spaced-icon'></span>Settings
-    </a><!-- button -->
-    <a href="#/new" class="push_button green">
-      <span class='icon-plus icon-white spaced-icon'></span>New key
-    </a>
-  </div>
-  <input ng-model='query' class='green-input search' ng-change='filterByQuery()' placeholder='Search keys with a regexp' type='text'>
-  <section id="key-keys">
-    <ul>
-      <li ng-repeat='key in keys' class="key">
-        <div class="key-info">
-          <div class="key-header">
-            <a class="key-title" href="#/key/{{ key.key }}">{{ key.key }}</a><!-- key-title -->
-          </div><!-- key-header -->
-        </div><!-- key-info -->
+<section id='menu'>
+  <div class='nav-keys'>
+    <div>
+      <a href="#/config" class="push_button green">
+        <span class='icon-cog icon-white spaced-icon'></span>Settings
+      </a><!-- button -->
+      <a href="#/new" class="push_button green">
+        <span class='icon-plus icon-white spaced-icon'></span>New key
+      </a>
+    </div>
+    <input ng-model='query' class='green-input search' ng-change='filterByQuery()' placeholder='Search keys with a regexp' type='text'>
+    <section id="key-keys">
+      <ul>
+        <li ng-repeat='key in keys' class="key">
+          <div class="key-info">
+            <div class="key-header">
+              <a class="key-title" href="#/key/{{ key.key }}">{{ key.key }}</a><!-- key-title -->
+            </div><!-- key-header -->
+          </div><!-- key-info -->
 
-        <div class="key-actions">
-          <span class="key-data">{{ key.bytes }}<b>B</b></span><!-- key-data -->
-          <a ng-click="removeKey(key)" class="icon-remove pointer" ng-controller="DeleteKeyController"></a>
-          <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
-        </div><!-- key-actions -->
-      </li><!-- key -->
-    </ul>
-  </section><!-- key-menu -->
+          <div class="key-actions">
+            <span class="key-data">{{ key.bytes }}<b>B</b></span><!-- key-data -->
+            <a ng-click="removeKey(key)" class="icon-remove pointer" ng-controller="DeleteKeyController"></a>
+            <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
+          </div><!-- key-actions -->
+        </li><!-- key -->
+      </ul>
+    </section><!-- key-menu -->
+  </div>
+  <div class='left-nav-bottom' ng-controller='StatsController'>
+    {{ numberOfKeys }} keys using {{ bytes }} of {{ maxBytes }}.
+  </div>
   <div class="clear"></div>
 </section>
