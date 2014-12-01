@@ -22,4 +22,9 @@ describe Sinatra::MemcachedConnection do
       expect(klass.instance_variable_get(:"@memcached")).to eq klass.memcached_connection
     end
   end
+
+  context '#memcached_connected?', wip: true do
+    it { expect(klass.memcached_connected?('localhost', '11211')).to be_truthy }
+    it { expect(klass.memcached_connected?('localhost', '1121')).to be_falsy }
+  end
 end

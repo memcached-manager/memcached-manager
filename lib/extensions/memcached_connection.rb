@@ -8,6 +8,15 @@ module Sinatra
       @memcached.close
     end
 
+    def memcached_connected? host, port
+      begin
+        Net::Telnet::new("Host" => host, "Port" => port)
+      rescue Errno::ECONNREFUSED
+        return false
+      end
+      true
+    end
+
     def memcached_connection
       @memcached
     end
