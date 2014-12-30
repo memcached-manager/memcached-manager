@@ -1,7 +1,7 @@
 <section id='menu'>
   <div class='nav-keys'>
     <div>
-      <img src="images/logo.png" height="215" width="340" />
+      <img src="images/logo.png" />
       <a href="#/config" class="push_button green">
         <span class='icon-cog icon-white spaced-icon'></span>Settings
       </a><!-- button -->
@@ -29,7 +29,7 @@
     </section><!-- key-menu -->
   </div>
   <div class='left-nav-bottom' ng-controller='StatsController'>
-    {{ stats | configs:"numberOfKeys" | humanize_size }} keys using {{ stats | configs:"bytes" | humanize_size }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" | humanize_size }}.
+    {{ stats | configs:"numberOfKeys" }} keys using {{ stats | configs:"bytes" | humanize_size }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" | humanize_size }}.
   </div>
   <div class="clear"></div>
 </section>

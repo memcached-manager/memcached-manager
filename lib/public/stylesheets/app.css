@@ -14,6 +14,7 @@ h1, h2, h3, h4 {
 }
 
 .left-nav-bottom {
+  text-align: center;
   color: #87aba7;
   background-color: #d9e8e6;
   font-size: 10px;
