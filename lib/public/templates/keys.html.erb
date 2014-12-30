@@ -29,7 +29,7 @@
     </section><!-- key-menu -->
   </div>
   <div class='left-nav-bottom' ng-controller='StatsController'>
-    {{ numberOfKeys }} keys using {{ bytes }} of {{ maxBytes }}.
+    {{ stats | configs:"numberOfKeys" }} keys using {{ stats | configs:"bytes" }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" }} bytes.
   </div>
   <div class="clear"></div>
 </section>
