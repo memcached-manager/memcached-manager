@@ -2,6 +2,11 @@
  * Ui-view: keys
  * */
 
+
+html, body{
+  height:100%;
+}
+
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
   background-color: #BBC7C5;
@@ -23,7 +28,17 @@ h1, h2, h3, h4 {
 
 .container {
   background-color: #fff;
-  border-bottom: 5px solid #999;
+  height: 100%;
+}
+
+#right-side {
+  height: 100%;
+  overflow: scroll;
+  max-width: 620px;
+}
+
+.text-content {
+  padding-top: 20px;
 }
 
 .bottom-container {
@@ -34,10 +49,6 @@ h1, h2, h3, h4 {
   width:100%;
 	bottom:0;
 	left:0;
-}
-
-.text-content {
-  max-width: 620px;
 }
 
 .key {
@@ -58,6 +69,11 @@ h1, h2, h3, h4 {
 
 a {
   text-decoration: none;
+}
+
+#key-keys {
+  height: 360px;
+  overflow: auto;
 }
 
 #key-keys a:hover {
