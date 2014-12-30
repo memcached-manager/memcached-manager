@@ -5,12 +5,28 @@
     <div ui-view="keys"></div>
   </div><!-- two-third column -->
   <div class="two-third column" id="right-side">
-    <div ui-view="key" class="text-content"></div>
+    <div ui-view="key" class="text-content">
+    </div>
   </div><!-- two-third column -->
 </div><!-- container -->
 
+<div style="display: none;">
+  <a href="#/new" class="push_button green">
+    <span class='icon-plus icon-white spaced-icon'></span>New key
+  </a>
+  <a href="/" class="push_button green">
+    <span class='icon-plus icon-white spaced-icon'></span>Stats
+  </a>
+  <a href="#/new" class="push_button green">
+    <span class='icon-plus icon-white spaced-icon'></span>Terminal
+  </a>
+  <a href="#/config" class="push_button green">
+    <span class='icon-cog icon-white spaced-icon'></span>Settings
+  </a>
+</div>
 <div class='bottom-container'>
   <div id='terminal'></div>
 </div>
+
 <!-- This controller is used to bootstrap the application -->
 <section ng-controller='BootstrapController'></section>

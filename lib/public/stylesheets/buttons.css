@@ -42,15 +42,16 @@ a.push_button {
   float: left;
   letter-spacing: 1px;
 	position: relative;
-	width: 40%;
-	height:40px;
+	width: 100px;
+  font-size: 13px;
+  font-weight: 600;
+	height: 30px;
 	text-align:center;
-	color:#FFF;
-	text-decoration:none;
-	line-height:43px;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 30px;
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 	display: block;
-	margin: 28px 14px 28px 14px;
 }
 
 .push_button:active {

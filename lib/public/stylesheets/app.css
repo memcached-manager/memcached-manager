@@ -18,6 +18,18 @@ h1, h2, h3, h4 {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 }
 
+#top-right {
+  height: 35px;
+  padding: 12px;
+  border-bottom: 1px solid #87aba7;
+  -moz-border-radius:0px 0px 7px 7px;
+  border-radius:0px 0px 7px 7px;
+}
+
+#right-side {
+  max-width: 620px;
+}
+
 .left-nav-bottom {
   text-align: center;
   color: #87aba7;
@@ -26,15 +38,12 @@ h1, h2, h3, h4 {
   padding: 5px;
 }
 
-.container {
-  background-color: #fff;
-  height: 100%;
+.left-nav-bottom .highlight {
+  color: #2c4e4a;
 }
 
-#right-side {
-  height: 100%;
-  overflow: scroll;
-  max-width: 620px;
+.container {
+  background-color: #fff;
 }
 
 .text-content {
@@ -72,8 +81,6 @@ a {
 }
 
 #key-keys {
-  height: 360px;
-  overflow: auto;
 }
 
 #key-keys a:hover {

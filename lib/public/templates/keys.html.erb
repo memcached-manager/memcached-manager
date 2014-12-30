@@ -1,15 +1,15 @@
 <section id='menu'>
   <div class='nav-keys'>
-    <div>
-      <img src="images/logo.png" />
-      <a href="#/config" class="push_button green">
-        <span class='icon-cog icon-white spaced-icon'></span>Settings
-      </a><!-- button -->
-      <a href="#/new" class="push_button green">
-        <span class='icon-plus icon-white spaced-icon'></span>New key
-      </a>
-    </div>
+    <img src="images/logo.png" />
     <input ng-model='query' class='green-input search' ng-change='filterByQuery()' placeholder='Search keys with a regexp' type='text'>
+    <div class='left-nav-bottom' ng-controller='StatsController'>
+      Showing
+      <span class="highlight">{{ stats | configs:"numberOfKeys" }} keys</span>
+      using
+      <span class="highlight">
+        {{ stats | configs:"bytes" | humanize_size }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" | humanize_size }}.
+      </span>
+    </div>
     <section id="key-keys">
       <ul>
         <li ng-repeat='key in keys' class="key">
@@ -27,9 +27,6 @@
         </li><!-- key -->
       </ul>
     </section><!-- key-menu -->
-  </div>
-  <div class='left-nav-bottom' ng-controller='StatsController'>
-    {{ stats | configs:"numberOfKeys" }} keys using {{ stats | configs:"bytes" | humanize_size }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" | humanize_size }}.
   </div>
   <div class="clear"></div>
 </section>
