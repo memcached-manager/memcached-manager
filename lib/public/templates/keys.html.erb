@@ -20,7 +20,7 @@
           </div><!-- key-info -->
 
           <div class="key-actions">
-            <span class="key-data">{{ key.bytes }}<b>B</b></span><!-- key-data -->
+            <span class="key-data">{{ key.bytes | humanize_size }}</span><!-- key-data -->
             <a ng-click="removeKey(key)" class="icon-remove pointer" ng-controller="DeleteKeyController"></a>
             <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
           </div><!-- key-actions -->
@@ -29,7 +29,7 @@
     </section><!-- key-menu -->
   </div>
   <div class='left-nav-bottom' ng-controller='StatsController'>
-    {{ stats | configs:"numberOfKeys" }} keys using {{ stats | configs:"bytes" }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" }} bytes.
+    {{ stats | configs:"numberOfKeys" | humanize_size }} keys using {{ stats | configs:"bytes" | humanize_size }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" | humanize_size }}.
   </div>
   <div class="clear"></div>
 </section>
