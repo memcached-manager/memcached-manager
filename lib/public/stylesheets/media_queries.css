@@ -1,6 +1,13 @@
-/* Buttons */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .menu-container {
+    border-bottom: 1px solid #4f4745;
+    -moz-border-radius:0px 0px 7px 7px;
+    border-radius:0px 0px 7px 7px;
+    background-color: #666;
+    height: 42px;
+    width: 456px;
+  }
 
-@media (min-width: 960px) {
   .green-desktop {
     text-shadow:-1px -1px 0 #2c4e4a;
     background: #448780;
@@ -12,9 +19,10 @@
     -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #2c4e4a, 0 4px 2px rgba(0, 0, 0, .5);
     box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #2c4e4a, 0 4px 2px rgba(0, 0, 0, .5);
   }
-}
 
-@media (min-width: 960px) {
+  .green-desktop:hover, .green:focus {
+    background: #569c95;
+  }
   .push_button {
     margin: 0 6px 0 6px;
     float: left;
@@ -36,32 +44,64 @@
     -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
     top:5px;
   }
+
+  input.green-input {
+    width: 206px;
+  }
+
+  .logo {
+    width: 240px;
+  }
 }
 
-/* Menu */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 960px) {
   .menu-container {
-    background-color: #2c4e4a;
+    max-width: 620px;
+    border-bottom: 1px solid #4f4745;
+    -moz-border-radius:0px 0px 7px 7px;
+    border-radius:0px 0px 7px 7px;
+    background-color: #666;
+    height: 42px;
     width: 100%;
+  }
+
+  .push_button {
+    margin: 0 6px 0 6px;
+    float: left;
+    letter-spacing: 1px;
     position: relative;
-  }
-
-  .menu-container a:hover, a:focus {
-    text-decoration: underline;
-    background-color: #448780;
-  }
-
-  .menu-container a {
+    width: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    height: 30px;
+    text-align:center;
+    color: #FFF;
+    text-decoration: none;
+    line-height: 33px;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
     display: block;
-    padding: 10px;
-    color: #fff;
   }
 
-  .menu-container .spaced-icon{
-    margin-right: 5px;
+  .push_button:active {
+    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+    top:5px;
+  }
+
+  .green-desktop {
+    text-shadow:-1px -1px 0 #2c4e4a;
+    background: #448780;
+    border:1px solid #2c4e4a;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #2c4e4a, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #2c4e4a, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #2c4e4a, 0 4px 2px rgba(0, 0, 0, .5);
+  }
+  .green-desktop:hover, .green:focus {
+    background: #569c95;
   }
 }
-
 
 @media only screen and (max-width: 767px) {
   .menu-container {
@@ -86,18 +126,37 @@
   }
 }
 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  input.green-input {
+    width: 390px;
+  }
 
-@media (min-width: 960px) {
+  .logo {
+    width: 420px;
+  }
+
+  #right-side {
+    width: 420px;
+  }
+
   .menu-container {
-    max-width: 620px;
-    border-bottom: 1px solid #4f4745;
-    -moz-border-radius:0px 0px 7px 7px;
-    border-radius:0px 0px 7px 7px;
-    background-color: #666;
-    height: 42px;
-    width: 100%;
+    background-color: #2c4e4a;
+    width: 420px;
+    position: relative;
+  }
+
+  .menu-container a:hover, a:focus {
+    text-decoration: underline;
+    background-color: #448780;
+  }
+
+  .menu-container a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+  }
+
+  .menu-container .spaced-icon{
+    margin-right: 5px;
   }
 }
-
-
-
