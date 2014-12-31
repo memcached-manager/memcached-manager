@@ -44,10 +44,11 @@ h1, h2, h3, h4 {
 
 .bottom-container {
   background-color: #000;
+  background-opacity: 50%;
   position: fixed;
-  color: green;
   font-weight: bold;
-  width:100%;
+  width: 0;
+  height: 0;
 	bottom:0;
 	left:0;
 }
