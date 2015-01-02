@@ -40,6 +40,7 @@
     <script type='text/javascript'>
       // This is used because sometimes the app is a Rails/Rack mounted application and it's base path is different.
       window.basePath = '<%= @engine_path %>';
+      window.stateVariables = {};
     </script>
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/jquery-1.9.1.min.js'></script>
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/underscore.js'></script>
@@ -54,6 +55,7 @@
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/services/notification.js'></script>
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/services/response.js'></script>
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/services/resources.js'></script>
+    <script type='text/javascript' src='<%= @engine_path %>/javascripts/angular/services/query_params_singleton.js'></script>
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/noty/jquery.noty.js'></script>
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/noty/layouts/top.js'></script>
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/noty/themes/default.js'></script>
