@@ -36,6 +36,10 @@ module MemcachedManager
       close_memcached
     end
 
+    get '/status.json' do
+      api_response { { connected: memcached_connected?(memcached_host(session), memcached_port(session)) } }
+    end
+
     get '/config.json' do
       api_response { { host: memcached_host(session), port: memcached_port(session), connected: memcached_connected?(memcached_host(session), memcached_port(session)) } }
     end

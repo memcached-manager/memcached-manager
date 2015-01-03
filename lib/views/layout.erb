@@ -40,6 +40,8 @@
     <script type='text/javascript'>
       // This is used because sometimes the app is a Rails/Rack mounted application and it's base path is different.
       window.basePath = '<%= @engine_path %>';
+
+      // Variables that hold state in the angular.js app
       window.stateVariables = {};
     </script>
     <script type='text/javascript' src='<%= @engine_path %>/javascripts/jquery-1.9.1.min.js'></script>
