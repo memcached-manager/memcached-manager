@@ -41,14 +41,14 @@ module MemcachedManager
     end
 
     get '/config.json' do
-      api_response { { host: memcached_host(session), port: memcached_port(session), connected: memcached_connected?(memcached_host(session), memcached_port(session)) } }
+      api_response { { host: memcached_host(session), port: memcached_port(session) } }
     end
 
     post '/config.json' do
       session['host'] = params['host']
       session['port'] = params['port']
 
-      api_response { { host: memcached_host(session), port: memcached_port(session), connected: memcached_connected?(memcached_host(session), memcached_port(session)) } }
+      api_response { { host: memcached_host(session), port: memcached_port(session) } }
     end
 
     post '/run.json' do
