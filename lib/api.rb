@@ -14,9 +14,11 @@ module MemcachedManager
   class API < Sinatra::Base
     enable :inline_templates
     enable :sessions
+    enable :cookies
 
     set :public_folder, 'public'
 
+    helpers Sinatra::Cookies
     helpers Sinatra::MemcachedSettings
     helpers Sinatra::MemcachedConnection
     helpers Sinatra::MemcachedCommand
@@ -29,7 +31,7 @@ module MemcachedManager
 
       setup_errors
 
-      try { setup_memcached(memcached_host(session), memcached_port(session)) }
+      try { setup_memcached(memcached_host(cookies), memcached_port(cookies)) }
     end
 
     after do
@@ -37,23 +39,23 @@ module MemcachedManager
     end
 
     get '/status.json' do
-      api_response { { connected: memcached_connected?(memcached_host(session), memcached_port(session)) } }
+      api_response { { connected: memcached_connected?(memcached_host(cookies), memcached_port(cookies)) } }
     end
 
     get '/config.json' do
-      api_response { { host: memcached_host(session), port: memcached_port(session) } }
+      api_response { { host: memcached_host(cookies), port: memcached_port(cookies) } }
     end
 
     post '/config.json' do
-      session['host'] = params['host']
-      session['port'] = params['port']
+      response.set_cookie(:host, :value => params['host'], :path => '/')
+      response.set_cookie(:port, :value => params['port'], :path => '/')
 
-      api_response { { host: memcached_host(session), port: memcached_port(session) } }
+      api_response { { host: memcached_host(cookies), port: memcached_port(cookies) } }
     end
 
     post '/run.json' do
       api_response do
-        memcached_command(host: memcached_host(session), port: memcached_port(session), command: params[:command])
+        memcached_command(host: memcached_host(cookies), port: memcached_port(cookies), command: params[:command])
       end
     end
 
@@ -61,13 +63,13 @@ module MemcachedManager
       send(method, '/keys.json') do
         try { memcached_connection.set(params[:key], params[:value]) }
 
-        api_response { memcached_inspect(host: memcached_host(session), port: memcached_port(session), key: params[:key]) }
+        api_response { memcached_inspect(host: memcached_host(cookies), port: memcached_port(cookies), key: params[:key]) }
       end
     end
 
     get '/keys.json' do
       api_response do
-        memcached_inspect(host: memcached_host(session), port: memcached_port(session), query: params[:query])
+        memcached_inspect(host: memcached_host(cookies), port: memcached_port(cookies), query: params[:query])
       end
     end
 
