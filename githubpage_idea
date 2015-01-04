@@ -1,0 +1,23 @@
+Did you ever try to read all keys that are in memcached and found out that memcached have no command that allows it?
+
+Do you miss being able to actually know what is inside your memcached server effortlessly?
+
+I did want that, so I've built it. Check it out:
+
+(image of menu)
+- Check how much time is left for any key to expire or how much size it occupies.
+
+(image of search)
+- Find any key you want. (made in angular.js)
+
+(terminal mode image)
+- Type anything on a terminal connection directly with the memcached server, no need to telnet anymore.
+
+(image with crud stuff)
+- A CRUD for your memcached server: Create, Read, Update or Delete any key without using an archaic direct telnet connection.
+
+All that packaged in a slick web interface, just install it and use it! It's also pluggable to any rack/rails application with -one line-.
+
+(installing instructions, gem install memcached-manager blablabla)
+
+footer: made with <3 in Brazil
