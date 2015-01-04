@@ -29,6 +29,7 @@
 
           <div class="key-actions">
             <span class="key-data">{{ key.bytes | humanize_size }}</span><!-- key-data -->
+            <span class="key-data">{{ key | humanize_timestamp }}</span><!-- key-data -->
             <a ng-click="removeKey(key)" class="icon-remove pointer" ng-controller="DeleteKeyController"></a>
             <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
           </div><!-- key-actions -->

@@ -40,10 +40,11 @@ module Sinatra
         localhost.cmd("String" => "stats cachedump #{slab_id} #{cache_dump_limit}", "Match" => /^END/) do |c|
           matches = c.scan(/^ITEM (.+?) \[(\d+) b; (\d+) s\]$/).each do |key_data|
             (cache_key, bytes, expires_time) = key_data
-            humanized_expires_time = Time.at(expires_time.to_i).to_s
-            expired = false
-            expired = true if Time.at(expires_time.to_i) < Time.now
-            keys << { key: cache_key, bytes: bytes, expires_at: humanized_expires_time, expired: expired }
+            expires_in = expires_time.to_i
+            infinite = false
+            infinite = true if Time.at(expires_time.to_i) < Time.now
+
+            keys << { key: cache_key, bytes: bytes, expires_in: expires_in, infinite: infinite }
           end
         end
       end
