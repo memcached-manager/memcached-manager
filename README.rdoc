@@ -45,10 +45,13 @@ If you want to specify a different config than the defaults(localhost:11211) add
  
 See +CONTRIBUTING.md+
 
+== Contributors
+
+* Ami[ami_sama@hotmail.com] (made the logo)
+
 == Maintainers
 
 * thiagofm[http://github.com/thiagofm]
-
 
 == Copyright
 
