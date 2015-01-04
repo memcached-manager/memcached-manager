@@ -13,7 +13,7 @@ World(RSpec::Matchers)
 
 # Files
 Dir.glob("lib/**/*.rb").each do |file|
-  require_relative "../../#{file}"
+  require "./#{file}"
 end
 
 Capybara.app = Rack::Builder.parse_file(File.expand_path('../../../config.ru', __FILE__)).first
@@ -26,3 +26,4 @@ end
 
 MemcachedConfigs = { host: ENV['MEMCACHED_1_PORT_11211_TCP_ADDR'] || 'localhost', port: '11211' }
 Memcached        = Dalli::Client.new("#{MemcachedConfigs[:host]}:#{MemcachedConfigs[:port]}")
+

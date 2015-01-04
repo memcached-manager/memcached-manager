@@ -15,7 +15,6 @@ group :test do
   gem "rack-test", :require => "rack/test"
   gem "rspec"
   gem "mocha"
-  gem "cucumber"
   gem "capybara", :require => false
   gem "faraday"
 end
