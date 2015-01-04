@@ -13,7 +13,6 @@ Have `memcached` run on `localhost:11211` then run:
 
 == Roadmap(stuff you can do)
 
-* Change keys formatting from div to table & style TTL of keys
 * Add search icon next to search input
 * Add some formatting to forms
 * Do the notification system correctly using angular.js

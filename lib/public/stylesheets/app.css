@@ -198,9 +198,13 @@ a {
   font-weight: 600;
 }
 
+#keys td {
+  font-size: 12px;
+}
+
 #keys #key {
   padding-left: 10px;
-  width: 90px;
+  width: 93px;
 }
 
 #keys #size {
@@ -210,7 +214,12 @@ a {
 
 #keys #expires-in {
   text-align: center;
-  width: 107px;
+  width: 100px;
+}
+
+#keys #actions {
+  width: 60px;
+  text-align: center;
 }
 
 #keys .keys-key {
