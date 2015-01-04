@@ -18,6 +18,7 @@ Have `memcached` run on `localhost:11211` then run:
 * Add some formatting to forms
 * Change keys formatting from div to table & style TTL of keys
 * Develop frontend & artwork (almost done)
+* Fix test build
 
 == Making a pull request?
  
