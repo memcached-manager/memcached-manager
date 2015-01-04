@@ -1,5 +1,4 @@
 @api
-@wip
 Feature: Run command
   Scenario: Success
     Given there's some memcached keys avaiable
