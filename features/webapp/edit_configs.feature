@@ -5,5 +5,5 @@ Feature: Edit configs of memcached
     When I visit "#/config"
     And fill in "Host" with "127.0.0.1"
     And fill in "Port" with "11211"
-    And click "Edit"
+    And click "Update settings"
     Then I should see those configs in "/api/config.json"

@@ -5,5 +5,5 @@ Feature: Edit memcached pair
     Given a key named "foo" with the content "bar" exists
     When I visit "#/edit/foo"
     And fill in "Value" with "baz"
-    And click "Edit"
+    And click "Update key"
     Then "foo" key should have the "baz" value in memcached

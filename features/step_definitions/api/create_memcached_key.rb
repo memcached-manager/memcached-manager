@@ -12,7 +12,7 @@ Then /^I should receive a json response that it was saved successfully$/ do
   response_json.class.should eql Hash
   response_json.keys.should_not include 'errors'
   response_json.values.should include 'all.i.want.to.do'
-  response_json.keys.should include 'expired'
+  response_json.keys.should include 'expires_in'
 end
 
 Then /^it should be saved in memcached$/ do

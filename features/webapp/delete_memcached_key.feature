@@ -1,5 +1,6 @@
 @webapp
 @javascript
+@xpto
 Feature: Delete memcached pair
   Scenario: Success
     Given a key named "foo" with the content "bar" exists

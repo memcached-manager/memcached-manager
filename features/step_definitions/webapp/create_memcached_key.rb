@@ -1,10 +1,16 @@
-When /^click on the X inside a div$/ do
-  within(".key-actions") do
-    find('.icon-remove').click
-  end
-  sleep 5
+When /^I visit "(.*?)"$/ do |route|
+  visit route
 end
 
-Then /^"(.*?)" key shouldn't exist in memcached$/ do |key|
-  Memcached.get(key).should be nil
+When /^fill in "(.*?)" with "(.*?)"$/ do |field, value|
+  fill_in(field, :with => value)
+end
+
+When /^click "(.*?)"$/ do |button|
+  click_button button
+end
+
+Then /^"(.*?)" key should have the "(.*?)" value in memcached$/ do |key, value|
+  sleep 1
+  Memcached.get(key).should == value
 end
