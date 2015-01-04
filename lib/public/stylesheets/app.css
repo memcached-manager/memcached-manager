@@ -22,6 +22,53 @@ h1, h2, h3, h4 {
   max-width: 620px;
 }
 
+#notification {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  color: white;
+  font-weight: 600;
+}
+
+.notification-red {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: #ab4e3d;
+  border-bottom-color: #823b2e;
+  text-shadow: #823b2e 1px 1px;
+}
+
+.notification-red-fatal {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  animation: 1 blink 1s step-end infinite;
+  background-color: #ab4e3d;
+  border-bottom-color: #823b2e;
+  text-shadow: #823b2e 1px 1px;
+}
+
+.notification-blue {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: #5390b7;
+  border-bottom-color: #326586;
+  text-shadow: #326586 1px 1px;
+}
+
+.notification-green {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: #53b78b;
+  border-bottom-color: #348964;
+  text-shadow: #348964 1px 1px;
+}
+
 .left-nav-bottom {
   text-align: center;
   color: #87aba7;
