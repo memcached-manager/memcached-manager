@@ -47,7 +47,7 @@ See +CONTRIBUTING.md+
 
 == Contributors
 
-* Ami[ami_sama@hotmail.com] (made the logo)
+* Ami[mailto:ami_sama@hotmail.com] (made the logo)
 
 == Maintainers
 
