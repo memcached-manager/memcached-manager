@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 When(/^I post the command "(.*?)" to "(.*?)" in the API$/) do |command, route|
   @response = API.post do |req|
     req.url "api/#{route}"
