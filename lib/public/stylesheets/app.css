@@ -181,3 +181,30 @@ a {
 
 .key-title {
 }
+
+#keys tr {
+  color: #87aba7;
+  // border-bottom: 1px solid #d9e8e6;
+  height: 25px;
+  line-height: 25px;
+  text-align: left;
+}
+
+#keys #key {
+  width: 100px;
+}
+
+#keys #size {
+  width: 60px;
+}
+
+#keys #expires-in {
+  width: 107px;
+}
+
+#keys .key {
+}
+
+#keys .size {}
+#keys .expires-in {}
+#keys .actions {}

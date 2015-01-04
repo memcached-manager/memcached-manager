@@ -19,22 +19,28 @@
       </div>
     </div>
     <section id="key-keys">
-      <ul>
-        <li ng-repeat='key in keys' class="key">
-          <div class="key-info">
-            <div class="key-header">
-              <a class="key-title" href="#/key/{{ key.key }}">{{ key.key }}</a><!-- key-title -->
-            </div><!-- key-header -->
-          </div><!-- key-info -->
+      <table id='keys'>
+        <tr>
+          <th id="key">Key</th>
+          <th id="expires-in">Expires in</th>
+          <th id="size">Size</th>
+          <th id="actions"></th>
+        </tr>
 
-          <div class="key-actions">
-            <span class="key-data">{{ key.bytes | humanize_size }}</span><!-- key-data -->
-            <span class="key-data">{{ key | humanize_timestamp }}</span><!-- key-data -->
+        <tr ng-repeat='key in keys'>
+          <td class='key'>
+            <a class="key-title" href="#/key/{{ key.key }}">
+              {{ key.key }}
+            </a>
+          </td>
+          <td class='expires-in'>{{ key | humanize_timestamp }}</td>
+          <td class='size'><span class='key-data'> {{ key.bytes | humanize_size }}</span></td>
+          <td>
             <a ng-click="removeKey(key)" class="icon-remove pointer" ng-controller="DeleteKeyController"></a>
             <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
-          </div><!-- key-actions -->
-        </li><!-- key -->
-      </ul>
+          </td>
+        </tr>
+      </table>
     </section><!-- key-menu -->
   </div>
   <div class="clear"></div>
