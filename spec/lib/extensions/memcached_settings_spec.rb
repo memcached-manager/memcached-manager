@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Sinatra::MemcachedSettings do
-  let(:configured_session) { { 'host' => 'i.am', 'port' => '1337' } }
+  let(:configured_session) { { :host => 'i.am', :port => '1337' } }
   let(:empty_session) { {} }
   let(:klass) { Class.new.extend(Sinatra::MemcachedSettings) }
 
