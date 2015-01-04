@@ -13,10 +13,11 @@ Have `memcached` run on `localhost:11211` then run:
 
 == Roadmap(stuff you can do)
 
-* Add config for memcached server frontend
-* Develop frontend & artwork (in progress)
-* Favicon
-* Update API/frontend in order to use http statuses for errors, creation and so on.
+* Do the notification system correctly using angular.js
+* Add search icon next to search input
+* Add some formatting to forms
+* Change keys formatting from div to table & style TTL of keys
+* Develop frontend & artwork (almost done)
 
 == Making a pull request?
  
