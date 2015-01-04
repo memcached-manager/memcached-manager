@@ -57,4 +57,3 @@ See +CONTRIBUTING.md+
 
 Copyright (c) 2013 Thiago Fernandes Massa. See +LICENSE.txt+ for
 further details.
-
