@@ -19,9 +19,9 @@ describe Sinatra::MemcachedInspector do
       it { expect(response).to be_an_instance_of Array }
       it { expect(response.first.keys).to include :key }
       it { expect(response.first.keys).to include :bytes }
-      it { expect(response.first.keys).to include :expired }
+      it { expect(response.first.keys).to include :expires_in }
       it { expect(response.first[:key]).to eq 'hello' }
-      it { expect(response.first[:expired]).to be true }
+      it { expect(response.first[:expires_in]).to be_an_instance_of Fixnum }
     end
 
     context 'defined key' do
@@ -35,9 +35,9 @@ describe Sinatra::MemcachedInspector do
       it { expect(@response).to_not be_an_instance_of Array }
       it { expect(@response).to include :key }
       it { expect(@response).to include :bytes }
-      it { expect(@response).to include :expired }
+      it { expect(@response).to include :expires_in }
       it { expect(@response[:key]).to eq 'hello' }
-      it { expect(@response[:expired]).to eq true }
+      it { expect(@response[:expires_in]).to be_an_instance_of Fixnum }
     end
 
     context 'defined query' do
@@ -53,9 +53,10 @@ describe Sinatra::MemcachedInspector do
       it { expect(@response.size).to be 2 }
       it { expect(@response.first).to include :key }
       it { expect(@response.first).to include :bytes }
-      it { expect(@response.first.keys).to include :expired }
+      it { expect(@response.first.keys).to include :expires_in }
       it { expect(@response.first[:key]).to eq 'foo' }
       it { expect(@response.last[:key]).to eq 'foo1' }
+      it { expect(@response.first[:expires_in]).to be_an_instance_of Fixnum }
     end
   end
 end
