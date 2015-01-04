@@ -1,3 +1,7 @@
+require 'sinatra'
+require 'sinatra/base'
+require 'sinatra/contrib'
+
 #TODO: autoload extensions
 require_relative 'extensions/errors'
 require_relative 'extensions/memcached_settings'
