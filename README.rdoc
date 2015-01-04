@@ -1,5 +1,7 @@
 == Memcached Manager
 
+{<img src="https://github.com/thiagofm/memcached-manager/blob/master/lib/public/images/logo.png" />}
+
 A single-page sinatra memcached manager/admin that allows you to read stats, view, edit and create keys from memcached. Also easily pluggable to a Rails/Rack app.
 
 {<img src="https://travis-ci.org/thiagofm/memcached-manager.png" />}[https://travis-ci.org/thiagofm/memcached-manager] {<img src="https://codeclimate.com/github/thiagofm/memcached-manager.png" />}[https://codeclimate.com/github/thiagofm/memcached-manager]
@@ -48,6 +50,7 @@ See +CONTRIBUTING.md+
 == Maintainers
 
 * thiagofm[http://github.com/thiagofm]
+
 
 == Copyright
 
