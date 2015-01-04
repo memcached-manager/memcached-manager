@@ -182,29 +182,44 @@ a {
 .key-title {
 }
 
+#keys {
+  margin-top: 10px;
+}
+
 #keys tr {
-  color: #87aba7;
-  // border-bottom: 1px solid #d9e8e6;
+  color: #2c4e4a;
   height: 25px;
-  line-height: 25px;
   text-align: left;
+  line-height: 25px;
+}
+
+#keys th {
+  border-bottom: 5px solid #2c4e4a;
+  font-weight: 600;
 }
 
 #keys #key {
-  width: 100px;
+  padding-left: 10px;
+  width: 90px;
 }
 
 #keys #size {
+  text-align: center;
   width: 60px;
 }
 
 #keys #expires-in {
+  text-align: center;
   width: 107px;
 }
 
-#keys .key {
+#keys .keys-key {
+  padding-left: 10px;
 }
 
-#keys .size {}
-#keys .expires-in {}
-#keys .actions {}
+#keys .keys-expires-in {
+  text-align: center;
+}
+#keys .keys-actions {
+  text-align: center;
+}

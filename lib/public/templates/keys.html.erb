@@ -24,18 +24,18 @@
           <th id="key">Key</th>
           <th id="expires-in">Expires in</th>
           <th id="size">Size</th>
-          <th id="actions"></th>
+          <th id="actions">Actions</th>
         </tr>
 
         <tr ng-repeat='key in keys'>
-          <td class='key'>
+          <td class='keys-key'>
             <a class="key-title" href="#/key/{{ key.key }}">
               {{ key.key }}
             </a>
           </td>
-          <td class='expires-in'>{{ key | humanize_timestamp }}</td>
-          <td class='size'><span class='key-data'> {{ key.bytes | humanize_size }}</span></td>
-          <td>
+          <td class='keys-expires-in'>{{ key | humanize_timestamp }}</td>
+          <td class='keys-size'><span class='key-data'> {{ key.bytes | humanize_size }}</span></td>
+          <td class='keys-actions'>
             <a ng-click="removeKey(key)" class="icon-remove pointer" ng-controller="DeleteKeyController"></a>
             <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
           </td>
