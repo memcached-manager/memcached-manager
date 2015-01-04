@@ -52,9 +52,9 @@ RSpec::Core::RakeTask.new do |t|
   t.pattern = "./spec/**/*_spec.rb"
 end
 
-task :jasmineci do
-  system("export DISPLAY=:99.0 && bundle exec rake jasmine:ci")
-  raise "#{cmd} failed!" unless $?.exitstatus == 0
-end
+#task :jasmineci do
+  #cmd = system("export DISPLAY=:99.0 && bundle exec rake jasmine:ci")
+  #raise "#{cmd} failed!" unless $?.exitstatus == 0
+#end
 
-task :default => [:jasmineci, :features, :spec]
+task :default => [:features, :spec]
