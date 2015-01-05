@@ -1,8 +1,8 @@
-{<img src="https://github.com/thiagofm/memcached-manager/blob/master/lib/public/images/logo.png" />}[https://www.github.com/thiagofm/memcached-manager]
+{<img src="https://github.com/memcached-manager/memcached-manager/blob/master/lib/public/images/logo.png" />}[https://www.github.com/memcached-manager/memcached-manager]
 
 A single-page sinatra memcached manager/admin that allows you to read stats, view, edit and create keys from memcached. Also easily pluggable to a Rails/Rack app.
 
-{<img src="https://travis-ci.org/thiagofm/memcached-manager.png" />}[https://travis-ci.org/thiagofm/memcached-manager] {<img src="https://codeclimate.com/github/thiagofm/memcached-manager.png" />}[https://codeclimate.com/github/thiagofm/memcached-manager]
+{<img src="https://travis-ci.org/memcached-manager/memcached-manager.png" />}[https://travis-ci.org/memcached-manager/memcached-manager] {<img src="https://codeclimate.com/github/thiagofm/memcached-manager.png" />}[https://codeclimate.com/github/thiagofm/memcached-manager]
 
 == Installing & running
 
