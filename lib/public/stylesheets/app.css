@@ -10,6 +10,7 @@ html, body{
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
   background-color: #BBC7C5;
+  min-height: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -82,6 +83,7 @@ h1, h2, h3, h4 {
 }
 
 .container {
+  height: 100%;
   background-color: #fff;
 }
 
