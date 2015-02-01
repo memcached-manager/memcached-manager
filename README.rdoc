@@ -38,7 +38,7 @@ If you want to specify a different config than the defaults(localhost:11211) add
 
 == Requirements
 
-    Ruby >= 1.9
+    Ruby >= 1.93
     Memcached (of course)
 
 == Contributing to Memcached Manager
@@ -55,5 +55,5 @@ See +CONTRIBUTING.md+
 
 == Copyright
 
-Copyright (c) 2013 Thiago Fernandes Massa. See +LICENSE.txt+ for
+Copyright (c) 2013-2015 Thiago Fernandes Massa. See +LICENSE.txt+ for
 further details.
