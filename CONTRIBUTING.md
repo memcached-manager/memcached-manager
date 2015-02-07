@@ -11,12 +11,11 @@ Have `memcached` run on `localhost:11211` then run:
 
     bundle exec rake
 
-== Roadmap(stuff you can do)
+== What does the project needs help with?
 
-* Add search icon next to search input
 * Add some formatting to forms
 * Do the notification system correctly using angular.js
-* Develop frontend & artwork (almost done)
+* Develop a better looking frontend
 
 == Making a pull request?
  
