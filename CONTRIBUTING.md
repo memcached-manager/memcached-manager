@@ -1,23 +1,23 @@
-== Running development mode
+## Running development mode
 
     bundle install
     rackup
 
-== Running the test suite
+## Running the test suite
 
-First, make sure you have phantomjs installed if you want to run cukes tagged as @javascript(those who are in the features/webapp directory.
+First, make sure you have phantomjs installed if you want to run cukes tagged as _@javascript_(those who are in the features/webapp directory.
 
-Have `memcached` run on `localhost:11211` then run:
+Have _memcached_ run on _localhost:11211_ then run:
 
     bundle exec rake
 
-== What does the project needs help with?
+## What does the project needs help with?
 
 * Add some formatting to forms
 * Do the notification system correctly using angular.js
 * Develop a better looking frontend
 
-== Making a pull request?
+## Making a pull request?
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
