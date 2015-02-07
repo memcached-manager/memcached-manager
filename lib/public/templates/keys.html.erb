@@ -5,7 +5,7 @@
     <div ng-controller='StatsController'>
       <div ng-switch on='connection.connected'>
         <div ng-switch-when='true' class='left-nav-bottom'>
-          Showing
+          A total of 
           <span class="highlight">{{ stats | configs:"numberOfKeys" }} keys</span>
           using
           <span class="highlight">
@@ -30,7 +30,7 @@
         <tr ng-repeat='key in keys'>
           <td class='keys-key'>
             <a class="key-title" href="#/key/{{ key.key }}">
-              {{ key.key }}
+              {{ key.key | shortify_key }}
             </a>
           </td>
           <td class='keys-expires-in'>{{ key | humanize_timestamp }}</td>
