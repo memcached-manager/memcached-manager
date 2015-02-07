@@ -110,3 +110,10 @@
   border-bottom: 5px solid #2c4e4a;
 }
 
+#search-box {
+  background-image: url('/images/search.png');
+  background-repeat: no-repeat;
+  background-position: 7px 7px;
+  padding-left: 48px;
+  width: 237px;
+}

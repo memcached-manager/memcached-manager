@@ -1,7 +1,7 @@
 <section id='menu'>
   <div class='nav-keys'>
     <img src="images/logo.png" class='logo' />
-    <input ng-model='query' class='green-input search' ng-change='filterByQuery()' placeholder='Search keys with a regexp' type='text'>
+    <input id="search-box" ng-model='query' class='green-input search' ng-change='filterByQuery()' placeholder='Search keys with a regexp' type='text'>
     <div ng-controller='StatsController'>
       <div ng-switch on='connection.connected'>
         <div ng-switch-when='true' class='left-nav-bottom'>
@@ -34,7 +34,7 @@
             </a>
           </td>
           <td class='keys-expires-in'>{{ key | humanize_timestamp }}</td>
-          <td class='keys-size'><span class='key-data'> {{ key.bytes | humanize_size }}</span></td>
+          <td class='keys-size'><span> {{ key.bytes | humanize_size }}</span></td>
           <td class='keys-actions'>
             <a ng-click="removeKey(key)" class="icon-remove pointer" ng-controller="DeleteKeyController"></a>
             <a href="#/edit/{{ key.key }}" class="icon-pencil"></a>
