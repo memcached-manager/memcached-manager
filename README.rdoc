@@ -24,7 +24,15 @@ or
 
 == Plugging memcached manager to an existing Rails app
 
-Just mount it in +config/routes.rb+:
+Add it to your +Gemfile+:
+
+    gem 'memcached-manager'
+
+Run:
+    
+    bundle install
+
+Now mount it in +config/routes.rb+:
 
     mount MemcachedManager::Routes, :at => '/mm'
 
