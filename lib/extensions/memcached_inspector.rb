@@ -5,18 +5,18 @@ module Sinatra
       port = options[:port]
       key = options[:key]
       query = options[:query]
+      limit = options[:limit]
 
       inspect = inspector host, port
 
       # Filter by key if defined
-      if !key.nil?
-        inspect = inspect.select{|pair| pair[:key] == key }.first
-      end
+      inspect = inspect.select{|pair| pair[:key] == key }.first if !key.nil?
 
       # Filter keys by query/regexp
-      if !query.nil?
-        inspect = inspect.select{|pair| pair[:key] =~ Regexp.new(query, 'i') }
-      end
+      inspect = inspect.select{|pair| pair[:key] =~ Regexp.new(query, 'i') } if !query.nil?
+
+      # Filter keys by limit
+      inspect = inspect.take(limit) if !limit.nil?
 
       inspect
     end

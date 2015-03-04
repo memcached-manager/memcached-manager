@@ -58,5 +58,17 @@ describe Sinatra::MemcachedInspector do
       it { expect(@response.last[:key]).to eq 'foo1' }
       it { expect(@response.first[:expires_in]).to be_an_instance_of Fixnum }
     end
+
+    context 'with limit' do
+      before(:each) do
+        memcached_connection.flush_all
+        memcached_connection.set('foo1', 'world')
+        memcached_connection.set('foo', 'world')
+        memcached_connection.set('xpto', "Who's John Galt?")
+        @response = klass.memcached_inspect host: host, port: port, limit: 2
+      end
+
+      it { expect(@response.size).to be 2 }
+    end
   end
 end
