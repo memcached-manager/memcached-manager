@@ -6,6 +6,8 @@ module Sinatra
       key = options[:key]
       query = options[:query]
       limit = options[:limit]
+      page = options[:page]
+      per_page = options[:per_page]
 
       inspect = inspector host, port
 
@@ -17,6 +19,16 @@ module Sinatra
 
       # Filter keys by limit
       inspect = inspect.take(limit.to_i) if !limit.nil?
+
+      # Filter keys by pagination
+      if !page.nil?
+        per_page = per_page.to_i
+        page = page.to_i
+
+        index_first = inspect.size/per_page * page
+        index_last = index_first + per_page
+        inspect = inspect[index_first...index_last]
+      end
 
       inspect
     end

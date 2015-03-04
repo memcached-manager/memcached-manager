@@ -70,5 +70,16 @@ describe Sinatra::MemcachedInspector do
 
       it { expect(@response.size).to be 2 }
     end
+
+    context 'with pagination' do
+      before(:each) do
+        memcached_connection.flush_all
+        (0..100).each {|n| memcached_connection.set(n, 0) }
+        @response = klass.memcached_inspect host: host, port: port, page: 5, per_page: 10
+      end
+
+      it { expect(@response.size).to be 10 }
+      it { expect(@response.map{|pair| pair[:key] }).to eq ["50", "49", "48", "47", "46", "45", "44", "43", "42", "41"] }
+    end
   end
 end
