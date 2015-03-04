@@ -68,7 +68,7 @@ module MemcachedManager
     end
 
     get '/keys.json' do
-      pairs = memcached_inspect(host: memcached_host(cookies), port: memcached_port(cookies), query: params[:query], limit: params[:limit])
+      pairs = memcached_inspect(host: memcached_host(cookies), port: memcached_port(cookies), query: params[:query], limit: params[:limit], per_page: params[:per_page], page: params[:page])
 
       # Removing all expired keys
       pairs.select! {|pair| !memcached_connection.get(pair[:key]).nil? }
