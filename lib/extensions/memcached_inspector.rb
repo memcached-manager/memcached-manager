@@ -16,7 +16,7 @@ module Sinatra
       inspect = inspect.select{|pair| pair[:key] =~ Regexp.new(query, 'i') } if !query.nil?
 
       # Filter keys by limit
-      inspect = inspect.take(limit) if !limit.nil?
+      inspect = inspect.take(limit.to_i) if !limit.nil?
 
       inspect
     end

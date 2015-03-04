@@ -15,3 +15,11 @@ Then /^I should receive a json response with those keys$/ do
   @response.last.values.should include 'foo'
   @response.first.values.should include 'ineed'
 end
+
+When(/^I visit "(.*?)" in the API with a limit parameter$/) do |route|
+  @response = JSON.parse(API.get("api/#{route}?limit=2").body)
+end
+
+Then(/^I should receive a json response with those keys filtered by the limit parameter$/) do
+  @response.size.should be 2
+end
