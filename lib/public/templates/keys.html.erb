@@ -2,22 +2,7 @@
   <div class='nav-keys'>
     <img src="images/logo.png" class='logo' />
     <input id="search-box" ng-model='query' class='green-input search' ng-change='filterByQuery()' placeholder='Search keys with a regexp' type='text'>
-    <div ng-controller='StatsController'>
-      <div ng-switch on='connection.connected'>
-        <div ng-switch-when='true' class='left-nav-bottom'>
-          A total of 
-          <span class="highlight">{{ stats | configs:"numberOfKeys" }} keys</span>
-          using
-          <span class="highlight">
-            {{ stats | configs:"bytes" | humanize_size }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" | humanize_size }}.
-          </span>
-        </div>
 
-        <div ng-switch-when='false' class='left-nav-bottom'>
-          The memcached server is out of reach.
-        </div>
-      </div>
-    </div>
     <section id="key-keys">
       <table id='keys'>
         <tr>
@@ -42,6 +27,23 @@
         </tr>
       </table>
     </section><!-- key-menu -->
+
+    <div ng-controller='StatsController'>
+      <div ng-switch on='connection.connected'>
+        <div ng-switch-when='true' class='left-nav-bottom'>
+          A total of 
+          <span class="highlight">{{ stats | configs:"numberOfKeys" }} keys</span>
+          using
+          <span class="highlight">
+            {{ stats | configs:"bytes" | humanize_size }}({{ stats | configs:"percentUsage" }}%) of {{ stats | configs:"maxBytes" | humanize_size }}.
+          </span>
+        </div>
+
+        <div ng-switch-when='false' class='left-nav-bottom'>
+          The memcached server is out of reach.
+        </div>
+      </div>
+    </div>
   </div>
   <div class="clear"></div>
 </section>
