@@ -63,5 +63,5 @@ See +CONTRIBUTING.md+
 
 == Copyright
 
-Copyright (c) 2013-2015 Thiago Fernandes Massa. See +LICENSE.txt+ for
+Copyright (c) 2013-2016 Thiago Fernandes Massa. See +LICENSE.txt+ for
 further details.
